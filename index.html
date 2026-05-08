@@ -95,25 +95,6 @@
             </div>
         </div>
 
-        <div class="trigger-area">
-            <div class="floating-plane">
-                <!-- FIX: aggiunto relative overflow-visible -->
-                <div class="plane-content relative overflow-visible bg-[var(--cyan)] p-4 flex flex-col">
-                    <h3 class="text-3xl font-bold uppercase">PRŌSOPON</h3>
-                    <h4 class="text-xl uppercase mb-12">Fashion Show</h4>
-                    <span class="absolute -right-6 top-28 -translate-y-8 py-2 px-8 font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
-
-                    <p class="font-black text-md">BRIXIA FORUM</p>
-                    <p class="text-md">VIA CAPRERA 5,<br>BRESCIA</p>
-                    <br>
-                    <p class="font-black text-md">INIZIO SPETTACOLO<br>H. 20:30</p>
-                    <p class="text-md">INGRESSO SU PRENOTAZIONE</p>
-
-                    <a href="#SFILATA" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PRENOTA BIGLIETTO</a>
-                </div>
-            </div>
-        </div>
-
        <div class="trigger-area">
             <div class="floating-plane">
                 <!-- FIX: aggiunto relative overflow-visible (mancava sulle card 2 e 3) -->
@@ -132,7 +113,25 @@
             </div>
         </div>
 
-    </div>
+        <div class="trigger-area">
+                    <div class="floating-plane">
+                        <!-- FIX: aggiunto relative overflow-visible -->
+                        <div class="plane-content relative overflow-visible bg-[var(--cyan)] p-4 flex flex-col">
+                            <h3 class="text-3xl font-bold uppercase">PRŌSOPON</h3>
+                            <h4 class="text-xl uppercase mb-12">Fashion Show</h4>
+                            <span class="absolute -right-6 top-28 -translate-y-8 py-2 px-8 font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
+
+                            <p class="font-black text-md">BRIXIA FORUM</p>
+                            <p class="text-md">VIA CAPRERA 5,<br>BRESCIA</p>
+                            <br>
+                            <p class="font-black text-md">INIZIO SPETTACOLO<br>H. 20:30</p>
+                            <p class="text-md">INGRESSO SU PRENOTAZIONE</p>
+
+                            <a href="#SFILATA" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PRENOTA BIGLIETTO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </section>
 
 <!-- ═══ EVENTI ══════════════════════════════════════════════════ -->
@@ -297,14 +296,24 @@
         </div>
 
         <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Palco Centrale (Aula Magna)</h4>
-        <div class="mb-10 bg-white">
-            <div class="flex border-b border-[#ccc]">
+        <div class="mb-10 bg-white w-full min-w-0">
+            <div class="flex border-b border-[#ccc] ">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
-                <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Biennio Cinema</p>
-                    <p class="text-xs mt-1 opacity-80">Presentazione cortometraggi originali.</p>
+                    <div class="px-5 py-4 min-w-0 flex-1 overflow-hidden">
+                        <p class="font-black text-xs uppercase tracking-wide break-words">
+                            Biennio Cinema — Presentazione Cortometraggi
+                        </p>
+                        <p class="text-xs mt-1 opacity-80 break-words">
+                            "Goodbye Baghdad" (finzione, A.A. 2022/23, regia Simone Manetti) 
+                            <br class="mobile-break"><br class="mobile-break"> 
+                            "Materia Viva" (documentario, A.A. 2024/25, regia Pini/Forte/Paletti/Vezzola) 
+                            <br class="mobile-break"><br class="mobile-break"> 
+                            "Marble Man" (finzione, A.A. 2024/25) 
+                            <br class="mobile-break"><br class="mobile-break"> 
+                            "Mix AI" — raccolta video realizzati in AI (10 min).
+                        </p>
+                    </div>
                 </div>
-            </div>
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">12:00</div>
                 <div class="px-5 py-4">
@@ -313,52 +322,51 @@
                 </div>
             </div>
             <div class="flex border-b border-[#ccc]">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:45</div>
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Contest: Triennio Decorazione</p>
-                    <p class="text-xs mt-1 opacity-80">Premiazione vincitore Contest del Marmo – con Marmi Ghirardi  CONTEST FRAMMENTI: l’upcycling creativo del marmo</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Progetto Elettron — Borse di Studio</p>
+                    <p class="text-xs mt-1 opacity-80">Contest decorazioni murali per Elettron. Triennio Decorazione.</p>
                 </div>
             </div>
             <div class="flex">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:45</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Awards & Contest</p>
-                    <p class="text-xs mt-1 opacity-80">Progetto Elettron (borse di studio), Contest Frammenti (Upcycling Marmo), Premiazione Marmi Ghirardi.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Premiazione Contest del Marmo</p>
+                    <p class="text-xs mt-1 opacity-80">Premiazione vincitore con Marmi Ghirardi. CONTEST FRAMMENTI: l’upcycling creativo del marmo.</p>
                 </div>
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">PITTURA (Aula A39)</h4>
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">PITTURA (Aula A39 / A59)</h4>
         <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Esposizione: Wounderkammer</p>
+                    <p class="text-xs mt-1 opacity-80">"La ferita è l'origine di una forza attiva". Superamento e trasformazione del dolore.</p>
+                </div>
+            </div>
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Esposizione: Wounderkammer</p>
-                    <p class="text-xs mt-1 opacity-80 leading-relaxed">"La ferita è l'origine di una forza attiva". Lavori di: Barbieri, Castelli, Gandini, Ravasi, Paltrinieri.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Creare con le AI (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Sviluppo immagini generative con AI.</p>
+                   <!-- <button class="ws-book-btn" onclick="openWsModal('Creare con le AI')">+ Prenota posto</button> -->
                 </div>
             </div>
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Creare con le AI</p>
-                    <p class="text-xs mt-1 opacity-80">Creare con le AI (Nicole Ronconi). Sviluppo immagini generative.</p>
-                   <!-- <button class="ws-book-btn" onclick="openWsModal('Creare con le AI')">+ Prenota posto</button> -->
-                </div>
-            </div>
-            <div class="flex border-b border-[#ccc]">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
-                <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Incisione</p>
-                    <p class="text-xs mt-1 opacity-80">Incisione e stampa in LABA (Luciano Pea). Tecniche d'arte antica e moderna.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Incisione e Stampa (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Incisione e stampa in LABA. Antico e moderno in dialogo.</p>
                    <!-- <button class="ws-book-btn" onclick="openWsModal('Incisione e Stampa')">+ Prenota posto</button> -->
                 </div>
             </div>
             <div class="flex">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Cianotipia</p>
-                    <p class="text-xs mt-1 opacity-80">Vedo Blu (Silvia Trappa). Antica tecnica fotografica e stampa a contatto.</p>
-                
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Vedo Blu — Cianotipia (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Sperimentare diversi punti di vista attraverso la cianotipia. (Silvia Trappa)</p>
                 </div>
             </div>
         </div>
@@ -401,10 +409,10 @@
                 </div>
             </div>
             <div class="flex">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]"></div>
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">DA DEFINIRE</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Il Graphic Design nel Cinema</p>
-                    <p class="text-xs mt-1 opacity-80">Giulia Stucchi e Mattia Bosio. Prop design, titoli e redesign locandine cinematografiche.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Il Graphic Designer nel Cinema</p>
+                    <p class="text-xs mt-1 opacity-80">Giulia Stucchi e Mattia Bosio. Il ruolo del graphic designer nel cinema (prima parte 1h + seconda parte 2h). Padiglione da definire.</p>
                     <!-- <button class="ws-book-btn" onclick="openWsModal('Graphic Design nel Cinema')">+ Prenota posto</button>  -->
                 </div>
             </div>
@@ -412,11 +420,32 @@
 
         <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DESIGN (Aula A40 / A52)</h4>
         <div class="mb-10 bg-white">
-            <div class="flex">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:30</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Interior & Green Design + Industrial & Research Design</p>
-                    <p class="text-xs mt-1 opacity-80">Presentazione dei progetti di: Via Cefalonia (Rovetta), Ergonomia (Bimbi), Orologi prototipali 3D, Pensiline Tram Brescia, Sergi Cereda Award.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Eyewear Design — Vincitori Sergio Cereda Award 2026 (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">11:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Ospite: Maurizio Scutellà (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Diario di viaggio di un designer — Conversazione sul design (30/45 min).</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Workshop Site Dound: B&B Cà Nostra, Cimbergo BS — Prof. Paolo Mestriner (15 min). Yacht Design — Lavori finali Biennio Industrial & Research Design, Arch. Filippo Rossi (15 min).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Veicoli Elettrici a guida autonoma — IOT Design (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
                 </div>
             </div>
         </div>
@@ -450,10 +479,10 @@
                 </div>
             </div>
             <div class="flex">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">POMERIGGIO</div>
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">DA DEFINIRE</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Antotipia</p>
-                    <p class="text-xs mt-1 opacity-80">Sara Benaglia e Alessandra Gatto. Pigmenti naturali da piante e fiori per processi fotografici alternativi (durata 2-3h).</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Antotipia (A62)</p>
+                    <p class="text-xs mt-1 opacity-80">Sara Benaglia e Alessandra Gatto. Pigmenti naturali da piante e fiori per processi fotografici alternativi (durata 2-3h). Orario da definire con la direzione.</p>
                     <!-- <button class="ws-book-btn" onclick="openWsModal('Antotipia')">+ Prenota posto</button> -->
                 </div>
             </div>
@@ -462,10 +491,10 @@
         <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">SCENOGRAFIA & PERFORMANCE <br class="mobile-break"> (Spazi Vari)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
-                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">13:30</div>
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">ENTRO 13:30</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Performance Art: Re-Enactment</p>
-                    <p class="text-xs mt-1 opacity-80">Armida Gandini (ispirato a Krzysztof Jung). Azione collettiva con rete di fili rossi nel secondo giardino.</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Performance Art: Re-Enactment (A29)</p>
+                    <p class="text-xs mt-1 opacity-80">Armida Gandini (ispirato a Krzysztof Jung). Azione collettiva con rete di fili rossi nel giardino. In caso di pioggia: Sala Posa. Durata ~30 min.</p>
                 </div>
             </div>
             <div class="flex border-b border-[#ccc]">
@@ -475,11 +504,18 @@
                     <p class="text-xs mt-1 opacity-80">Andrea Bertoni e Tommaso Monza. Interventi coreutico-drammaturgici improvvisi negli spazi dell'Accademia.</p>
                 </div>
             </div>
-            <div class="flex">
+            <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Cortometraggi & Allestimenti</p>
                     <p class="text-xs mt-1 opacity-80">A31: Proiezioni corti 2° anno e installazione Miriam Bergamelli. A29: Esposizione scenografica dei lavori del corso.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Fotografia Istantanea e Banco Ottico (Sala Posa)</p>
+                    <p class="text-xs mt-1 opacity-80">Workshop pratico di fotografia analogica con fotocamera istantanea e banco ottico.</p>
                 </div>
             </div>
         </div>
@@ -493,11 +529,25 @@
                     <p class="text-xs mt-1 opacity-80">Orientamento per scuole superiori, stand Erasmus e Placement.</p>
                 </div>
             </div>
-            <div class="flex">
+            <div class="flex border-b border-[#ccc]" >
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:00</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Associazione Alumni LABA</p>
-                    <p class="text-xs mt-1 opacity-80">Incontro dedicato agli ex studenti dell'Accademia.</p>
+                    <p class="text-xs mt-1 opacity-80">Presentazione della neonata associazione da parte del consiglio direttivo. </p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:15</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Drink & food</p>
+                    <p class="text-xs mt-1 opacity-80">Area drink & food in collaborazione con l'associazione ANEMONE. Dalle 17:30 DJ set e momenti ludici di gioco condiviso e creativo.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">DJ set</p>
+                    <p class="text-xs mt-1 opacity-80"> DJ set e momenti ludici di gioco condiviso e creativo.</p>
                 </div>
             </div>
         </div>

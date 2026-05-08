@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- user-scalable=no necessario per l'interazione 3D -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Synapses 2026 — Festival multidisciplinare di LABA Brescia: arte, design, moda e tecnologia.">
+    <meta name="theme-color" content="#A79ADB">
+    <title>Synapses 2026 | LABA Brescia</title>
+    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
+    <!-- CDN preconnect per ridurre latenza -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS3DRenderer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<!-- ═══ REDIRECT OVERLAY ════════════════════════════════════════ -->
+<div id="redirect-overlay"></div>
+
+<!-- ═══ HERO 3D ══════════════════════════════════════════════════ -->
+<div id="canvas-container">
+    <div class="absolute top-8 left-8 z-[100] pointer-events-none">
+        <!-- fetchpriority="high": è l'immagine above-the-fold più importante (LCP) -->
+        <img src="Assets/LABA_orange.svg" alt="Logo LABA Brescia" fetchpriority="high" class="w-32 h-auto object-contain pointer-events-auto">
+    </div>
+
+    <div class="absolute top-8 right-8 z-[100] pointer-events-none">
+        <img src="Assets/ThinkMakeFuture_oranve_v.svg" alt="Think Make Future" fetchpriority="high" class="w-20 h-auto object-contain pointer-events-auto">
+    </div>
+
+    <div class="absolute bottom-8 w-full text-center z-50 uppercase text-[9px] tracking-[4px] opacity-80 pointer-events-none" style="bottom:80px;">
+        Trascina per esplorare &bull; <br class="mobile-break"> Tocca i volumi <br class="mobile-break">&darr;
+    </div>
+</div>
+
+<!-- ═══ STUFF ════════════════════════════ -->
+<section class="w-full pt-20" style="background:var(--white);">
+    <div class="max-w-6xl mx-auto px-8">
+
+        <!-- Titolo sezione -->
+        <div class="mb-14">
+            <p class="font-black text-[9px] uppercase tracking-[0.4em] opacity-40 mb-3">Cos'è Synapses</p>
+            <h2 class="font-black text-5xl md:text-6xl uppercase tracking-tighter leading-none mb-0" style="color:var(--black);">Il Festival degli <br> Studenti LABA.</h2>
+        </div>
+        
+        <!-- Testo editoriale + numeri -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div>
+                <p class="text-sm mb-6">Synapses è il festival in cui arte, design, moda e tecnologia convivono per tre giorni in spazi aperti a tutti: studenti, famiglie, professionisti, curatori e semplici curiosi.</p>
+                <p class="text-sm ">Ogni evento è autonomo. Puoi venire a uno solo, a tutti e tre, o mandarci direttamente un amico. Non serve sapere cos'è LABA per capire cosa succede dentro.</p>
+            </div>
+
+            <!-- Numeri -->
+            <div class="grid grid-cols-3">
+                <div class="text-left md:text-center">
+                    <p class="font-black md:text-4xl text-3xl uppercase leading-none mb-2" style="color:var(--purple);">1500+</p>
+                    <p class="font-black text-[9px] uppercase tracking-[0.2em] opacity-50">Visitatori nel 2025</p>
+                </div>
+                <div class="text-center md:text-center">
+                    <p class="font-black md:text-4xl text-3xl uppercase leading-none mb-2" style="color:var(--yellow);">3</p>
+                    <p class="font-black text-[9px] uppercase tracking-[0.2em] opacity-50">Serate di Festival</p>
+                </div>
+                <div class="text-right md:text-center">
+                    <p class="font-black md:text-4xl text-3xl uppercase leading-none mb-2" style="color:var(--orange);">12</p>
+                    <p class="font-black text-[9px] uppercase tracking-[0.2em] opacity-50">Workshop aperti al pubblico</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ MAIN CONTENT ═════════════════════════════════════════════ -->
+<main>
+<section class="max-w-6xl px-8 md:px-0 w-full mx-auto pt-16 pb-12 md:pb-0 perspective-scene">
+    <div class="planes-container-3d">
+
+        <div class="trigger-area">
+            <div class="floating-plane">
+                <!-- relative overflow-visible necessario per lo span datato fuori dai bordi -->
+                <div class="plane-content relative overflow-visible bg-[var(--purple)] p-4 flex flex-col">
+                    <h3 class="text-3xl font-black uppercase mb-12">Cronache Disorganiche</h3>
+                    <span class="absolute -right-6 top-28 -translate-y-6 py-2 px-8 font-black bg-[var(--black)] text-[var(--white)]">22 APRILE</span>
+                    <br><br><br><br>
+                    <p class="text-md font-black">ACCADEMIA LABA E MITA</p>
+                     <p class="text-md">VIA PRIVATA DE VITALIS, 1</p>
+                    <p class="text-md font-black">H. 14:00 - 21:00</p>
+                    <a href="#DISORGANICHE" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="trigger-area">
+            <div class="floating-plane">
+                <!-- FIX: aggiunto relative overflow-visible -->
+                <div class="plane-content relative overflow-visible bg-[var(--cyan)] p-4 flex flex-col">
+                    <h3 class="text-3xl font-bold uppercase">PRŌSOPON</h3>
+                    <h4 class="text-xl uppercase mb-12">Fashion Show</h4>
+                    <span class="absolute -right-6 top-28 -translate-y-8 py-2 px-8 font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
+
+                    <p class="font-black text-md">BRIXIA FORUM</p>
+                    <p class="text-md">VIA CAPRERA 5,<br>BRESCIA</p>
+                    <br>
+                    <p class="font-black text-md">INIZIO SPETTACOLO<br>H. 20:30</p>
+                    <p class="text-md">INGRESSO SU PRENOTAZIONE</p>
+
+                    <a href="#SFILATA" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PRENOTA BIGLIETTO</a>
+                </div>
+            </div>
+        </div>
+
+       <div class="trigger-area">
+            <div class="floating-plane">
+                <!-- FIX: aggiunto relative overflow-visible (mancava sulle card 2 e 3) -->
+                <div class="plane-content relative overflow-visible bg-[var(--yellow)] p-4 flex flex-col">
+                    <h3 class="text-3xl font-black uppercase mb-12">Expo della Creatività</h3>
+                    <span class="absolute -right-6 top-28 -translate-y-6 py-2 px-8 font-black bg-[var(--black)] text-[var(--white)]">21 MAGGIO</span>
+
+                    <p class="font-black text-md">ACCADEMIA LABA</p>
+                    <p class="text-md">VIA DON G. VENDER, 66<br>BRESCIA</p>
+                    <br>
+                    <p class="font-black text-md">H. 14:00 - 18:00</p>
+                    <p class="text-md">INGRESSO LIBERO</p>
+
+                    <a href="#EXPO" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ EVENTI ══════════════════════════════════════════════════ -->
+<section class="w-full pb-20">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="font-black text-5xl uppercase mb-16 tracking-tighter">Il Programma</h2>
+
+        <!-- ── Evento 01 — Cronache Disorganiche (22 APRILE) ──────────────────── -->
+        <div id="DISORGANICHE" class="mb-2">
+            <div class="flex" style="background: var(--purple);">
+                <div class="flex-1 px-6 py-4">
+                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache Disorganiche</h3>
+                    <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-80">Incroci Creativi</p>
+                </div>
+                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">22 APRILE</span>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Think Violet <br class="mobile-break"> (Meeting Point - Atrio)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Saluti Istituzionali</p>
+                    <p class="text-xs mt-1 opacity-80">Direttore Angelo Cioffi, Diego Ruggeri e Alberto Minotti.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:15&nbsp; 15:45</div>
+                <div class="px-5 py-4 min-w-0">
+                    <p class="font-black text-xs uppercase tracking-wide">Sessione Talk AI</p>
+                    <p class="text-xs mt-1 opacity-80 break-words"><strong>14:15:</strong> Francesco D'Isa. <strong>14:45:</strong> Alberto Puliafito (Internazionale/Artificiale). <strong>15:15:</strong> AIAP - Giovanni Cavalleri.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">16:00&nbsp; 17:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Masterchef della Grafica</p>
+                    <p class="text-xs mt-1 opacity-80">Contest live di 45 min per 10 studenti. Giudici: Diego, Corona, Zini, Iosca, Stefani, Conzatti. Mistery box con 3 ingredienti creativi.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:00&nbsp; 18:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Closing Talk</p>
+                    <p class="text-xs mt-1 opacity-80"><strong>17:00:</strong> Riccardo Zanardelli - "Il Compressore Lungimirante". <strong>17:30:</strong> Alberto Brodesco - "Emozioni artificiali al cinema e tv".</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Axis01 (Interaction - Aula B10)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00&nbsp; 18:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Interaction Design Exhibition</p>
+                    <p class="text-xs mt-1 opacity-80">Opere visive e grafiche animate che reagiscono in tempo reale alla musica.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">18:00&nbsp; 19:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Live Performance: Lorem</p>
+                    <p class="text-xs mt-1 opacity-80">Concerto audiovisivo immersivo di Francesco D'Abbraccio.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Creative Space & Share <br class="mobile-break"> (Aule B04/B05)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 18:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Progetti e Tesi AI</p>
+                    <p class="text-xs mt-1 opacity-80"><strong>Presentazioni:</strong> Martina Gandolfi, Maria Chiara Falsina, Camilla Marino, Wafa Jelassi, Eva Carollo, Giorgia Vassallo, Vitali Negru, Daniele Fiorenza, Samuel Folchini.</p>
+                    <p class="text-[10px] mt-2 opacity-50 uppercase font-bold">Installazioni: Photobooth (Molinari), Spazio 360 (Pasotti), Muro (Stefani), Immagini (Corona).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 18:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Pink Share / Collaborazioni</p>
+                    <p class="text-xs mt-1 opacity-80">Thimus (Stefani), Fondazione Dolci (Guerini), Matera (Corona), Video Biennio Digital AI.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Workshop & Labs <br class="mobile-break"> (Make Grey - Aula B03)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 17:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Laboratori Pratici (Sessioni 30 min)</p>
+                    <ul class="text-xs mt-1 opacity-80 list-disc list-inside">
+                        <li>Fanzine AI (Buzzini e Pasotti)</li>
+                        <li>Generazione Immagini Comfy (Pasotti)</li>
+                        <li>Sviluppo 3D Meshy e Stampa (Mai e Colangelo)</li>
+                        <li>Pack Design (Conzatti)</li>
+                    </ul>
+                    <!-- riga 292 — Laboratori Pratici 22 Aprile 
+                <button class="ws-book-btn" onclick="openWsModal('Fanzine AI')">+ Prenota posto</button>-->
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Velvet Sky (Cortile)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 18:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Food & Social</p>
+                    <p class="text-xs mt-1 opacity-80">Catering Anemone, Set fotografico, App "Take a Cocktail" di Antonio Molinari.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">18:00&nbsp; 20:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Sunset Session</p>
+                    <p class="text-xs mt-1 opacity-80">Cocktail Bar e Dj Set con Adele Amato. Ambientazioni luminose James Turrell style.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">MITA (Collaborazioni & Music)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">16:00&nbsp; 17:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">TED Session (10 min ciascuno)</p>
+                    <p class="text-xs mt-1 opacity-80">A. Mentasti (Scrittura AI), L. Bravo (Web), F. Buelli (Marketing), Oxilia (Sport), Corona (10+2 Regole), Molinari, Zanchi, V. Iosca.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">20:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Main Concert</p>
+                    <p class="text-xs mt-1 opacity-80"><strong>Andy dei Bluvertigo</strong> in concerto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mappa 01 -->
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 text-[var(--purple)]">Dove si svolge — Passa sugli spazi per i dettagli</h4>
+        <div class="map-container" data-map-index="0">
+            <div class="info-box-inner">
+                <h4 class="text-sm md:text-xl font-black uppercase info-name"></h4>
+                <p class="text-xs font-mono info-desc"></p>
+            </div>
+            <img src="Assets/PIANTINA1.png" class="map-img" alt="Mappa evento 22 Aprile" loading="lazy">
+            <div class="hotspot-layer"></div>
+        </div>
+
+        <!-- ── Evento 02 — Expo della Creatività (21 MAGGIO) ──────────────────── -->
+        <div class="mb-2 mt-24" id="EXPO">
+            <div class="flex justify-end" style="background:var(--yellow);">
+                <div class="px-6 py-4 flex flex-col justify-center flex-1">
+                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Expo della Creatività</h3>
+                    <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Pensiero Multidimensionale</p>
+                </div>
+                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">21 MAGGIO</span>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Palco Centrale (Aula Magna)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Biennio Cinema — Presentazione Cortometraggi</p>
+                    <p class="text-xs mt-1 opacity-80">"Goodbye Baghdad" (finzione, A.A. 2022/23, regia Simone Manetti) · "Materia Viva" (documentario, A.A. 2024/25, regia Pini/Forte/Paletti/Vezzola) · "Marble Man" (finzione, A.A. 2024/25) · "Mix AI" — raccolta video realizzati in AI (10 min).</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">12:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Tram Tram Quotidiano con Brescia Mobilità</p>
+                    <p class="text-xs mt-1 opacity-80">Presentazione del progetto di mobilità e territorio.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Progetto Elettron — Borse di Studio</p>
+                    <p class="text-xs mt-1 opacity-80">Contest decorazioni murali per Elettron. Triennio Decorazione.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:45</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Premiazione Contest del Marmo</p>
+                    <p class="text-xs mt-1 opacity-80">Premiazione vincitore con Marmi Ghirardi. CONTEST FRAMMENTI: l’upcycling creativo del marmo.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">PITTURA (Aula A39 / A59)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Esposizione: Wounderkammer</p>
+                    <p class="text-xs mt-1 opacity-80">"La ferita è l'origine di una forza attiva". Superamento e trasformazione del dolore.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Creare con le AI (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Sviluppo immagini generative con AI.</p>
+                   <!-- <button class="ws-book-btn" onclick="openWsModal('Creare con le AI')">+ Prenota posto</button> -->
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Incisione e Stampa (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Incisione e stampa in LABA. Antico e moderno in dialogo.</p>
+                   <!-- <button class="ws-book-btn" onclick="openWsModal('Incisione e Stampa')">+ Prenota posto</button> -->
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Vedo Blu — Cianotipia (A59)</p>
+                    <p class="text-xs mt-1 opacity-80">Sperimentare diversi punti di vista attraverso la cianotipia. (Silvia Trappa)</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DECORAZIONE (Aula A58)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00&nbsp; 12:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Serigrafia</p>
+                    <p class="text-xs mt-1 opacity-80">Bestiari (Rossi/Cervi). Stampa su diverse superfici da repertori medievali e moderni.</p>
+                   <!-- <button class="ws-book-btn" onclick="openWsModal('Serigrafia — Bestiari')">+ Prenota posto</button> -->
+                </div>
+            </div>
+            <!-- FIX: rimosso il div.flex annidato inutilmente dentro un altro div.flex -->
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Materia in Transito & Urban Design</p>
+                    <p class="text-xs mt-1 opacity-80">Presentazione dei lavori di: Bernabè, Rodriguez. Relazione tra superficie, spazio pubblico e mobilità urbana.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Spazio pubblico, mobilità e progetto urbano</p>
+                    <p class="text-xs mt-1 opacity-80">Presentazione dei lavori di: Bernabè, Rodriguez. Attraverso interventi a diverse scale, i progetti affrontano il rapporto tra infrastruttura e città.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">GRAPHIC DESIGN & MULTIMEDIA <br class="mobile-break"> (A46 / A47)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Esposizione: Creatività e Tecnologia</p>
+                    <p class="text-xs mt-1 opacity-80">Esposizione Biennio Digital (Minotti, Bravo, Molinari, Gheller, Dusi, Guerini, Galli). App di Gamification e PhotoBooth cinematografico.</p>
+                    <p class="text-[10px] mt-2 opacity-50 uppercase">Progetti: Fragment d'un tapis amoreaux (Iosca), Gezziamoci 2026 (Corona), Motion Graphic (Gabrielli).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">DA DEFINIRE</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Il Graphic Designer nel Cinema</p>
+                    <p class="text-xs mt-1 opacity-80">Giulia Stucchi e Mattia Bosio. Il ruolo del graphic designer nel cinema (prima parte 1h + seconda parte 2h). Padiglione da definire.</p>
+                    <!-- <button class="ws-book-btn" onclick="openWsModal('Graphic Design nel Cinema')">+ Prenota posto</button>  -->
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DESIGN (Aula A40 / A52)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Eyewear Design — Vincitori Sergio Cereda Award 2026 (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">11:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Ospite: Maurizio Scutellà (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Diario di viaggio di un designer — Conversazione sul design (30/45 min).</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Workshop Site Dound: B&B Cà Nostra, Cimbergo BS — Prof. Paolo Mestriner (15 min). Yacht Design — Lavori finali Biennio Industrial & Research Design, Arch. Filippo Rossi (15 min).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
+                    <p class="text-xs mt-1 opacity-80">Veicoli Elettrici a guida autonoma — IOT Design (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FASHION DESIGN (Aula A53)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Esposizione: LABAtelier</p>
+                    <p class="text-xs mt-1 opacity-80">Progetti Mameli, Graneri (Tessuto), Delfino/Siani (Borse Jardin Secret / Capucci), Gallina (Accessori 3D).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00&nbsp; 17:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Made to Measure LABA!</p>
+                    <p class="text-xs mt-1 opacity-80">Crea capi in tela grezza (Balenciaga, Vionnet, YSL) su piccoli manichini assistiti dagli studenti.</p>
+                    <!-- <button class="ws-book-btn" onclick="openWsModal('Made to Measure LABA!')">+ Prenota posto</button> -->
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FOTOGRAFIA (Aula A62 / Mensa)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Geografie Instabili & Individual Works</p>
+                    <p class="text-xs mt-1 opacity-80">A62: Sistema complesso sull'acqua (Andrea Botto). Mensa: Ricerche visive contemporanee (Sara Benaglia).</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">DA DEFINIRE</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Antotipia (A62)</p>
+                    <p class="text-xs mt-1 opacity-80">Sara Benaglia e Alessandra Gatto. Pigmenti naturali da piante e fiori per processi fotografici alternativi (durata 2-3h). Orario da definire con la direzione.</p>
+                    <!-- <button class="ws-book-btn" onclick="openWsModal('Antotipia')">+ Prenota posto</button> -->
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">SCENOGRAFIA & PERFORMANCE <br class="mobile-break"> (Spazi Vari)</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">ENTRO 13:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Performance Art: Re-Enactment (A29)</p>
+                    <p class="text-xs mt-1 opacity-80">Armida Gandini (ispirato a Krzysztof Jung). Azione collettiva con rete di fili rossi nel giardino. In caso di pioggia: Sala Posa. Durata ~30 min.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">ITINERANTE</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Dialoghi Inutili da Pinter</p>
+                    <p class="text-xs mt-1 opacity-80">Andrea Bertoni e Tommaso Monza. Interventi coreutico-drammaturgici improvvisi negli spazi dell'Accademia.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Cortometraggi & Allestimenti</p>
+                    <p class="text-xs mt-1 opacity-80">A31: Proiezioni corti 2° anno e installazione Miriam Bergamelli. A29: Esposizione scenografica dei lavori del corso.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Fotografia Istantanea e Banco Ottico (Sala Posa)</p>
+                    <p class="text-xs mt-1 opacity-80">Workshop pratico di fotografia analogica con fotocamera istantanea e banco ottico.</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Servizi & Orientamento</h4>
+        <div class="mb-10 bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 17:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">LABA Visit</p>
+                    <p class="text-xs mt-1 opacity-80">Orientamento per scuole superiori, stand Erasmus e Placement.</p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]" >
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:00</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Associazione Alumni LABA</p>
+                    <p class="text-xs mt-1 opacity-80">Presentazione della neonata associazione da parte del consiglio direttivo. </p>
+                </div>
+            </div>
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:15</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Drink & food</p>
+                    <p class="text-xs mt-1 opacity-80">Area drink & food in collaborazione con l'associazione ANEMONE. Dalle 17:30 DJ set e momenti ludici di gioco condiviso e creativo.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">17:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">DJ set</p>
+                    <p class="text-xs mt-1 opacity-80"> DJ set e momenti ludici di gioco condiviso e creativo.</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- Mappa 02 -->
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Dove si svolge — Passa sugli spazi per i dettagli</h4>
+        <div class="map-container" data-map-index="1">
+            <div class="info-box-inner">
+                <h4 class="text-sm md:text-xl font-black uppercase info-name"></h4>
+                <p class="text-xs font-mono info-desc"></p>
+            </div>
+            <img src="Assets/PIANTINA2.png" class="map-img" alt="Mappa evento 21 Maggio" loading="lazy">
+            <div class="hotspot-layer"></div>
+        </div>
+
+ <!-- ── Evento 03 — PRŌSOPON Fashion Show (23 GIUGNO) ──────────────────── -->
+        <div class="mb-2 mt-24" id="SFILATA">
+            <div class="flex justify-end" style="background:var(--cyan);">
+                <div class="px-6 py-4 flex flex-col justify-center flex-1">
+                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">PRŌSOPON</h3>
+                    <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Fashion Show</p>
+                </div>
+                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
+            </div>
+        </div>
+
+        <div class="bg-white">
+            <div class="flex border-b border-[#ccc]">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">19:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">Opening Ceremony</p>
+                    <p class="text-xs mt-1 opacity-80">Red carpet e accoglienza per la sfilata annuale.</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">20:30</div>
+                <div class="px-5 py-4">
+                    <p class="font-black text-xs uppercase tracking-wide">The Fashion Show</p>
+                    <p class="text-xs mt-1 opacity-80">Sfilata delle collezioni del Triennio e Biennio di Fashion Design.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ PRENOTAZIONE SFILATA ══════════════════════════════════════════ -->
+
+   
+     <section id="PRENOTAZIONE" class="w-full pt-16">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1  gap-16 items-start">
+            <!-- Biglietto informativo -->
+            <div class="flex flex-col gap-8">
+                <p class="font-black text-md uppercase tracking-widest">Prenotazione Posti</p>
+                <div class="bg-[var(--cyan)] p-8">
+                    <h3 class="font-black text-2xl uppercase leading-none mb-6">
+                        PRŌSOPON<br>
+                        <span class="text-sm opacity-80">Fashion Show 2026</span>
+                    </h3>
+                    <div class="flex flex-col gap-4 text-xs font-bold uppercase tracking-widest">
+                        <div class="flex justify-between border-b border-black/20 pb-2">
+                            <span>Data</span><span>23 Giugno 2026</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/20 pb-2">
+                            <span>Location</span><span>Brixia Forum</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/20 pb-2">
+                            <span>Orario</span><span>19:30</span>
+                        </div>
+                        <p class="text-[9px] leading-relaxed opacity-80 pt-2">
+                            L'ingresso è garantito solo previa esibizione della conferma digitale ricevuta via email.
+                        </p>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="bg-[var(--black)] text-white px-8 py-5 font-black uppercase text-xs tracking-[0.4em] hover:bg-[var(--blue)] hover:text-white transition-all text-center">
+                            Coming Soon
+                        </a>
+                        <!-- <p class="text-[9px] uppercase font-bold tracking-widest opacity-40 text-center">Verrai reindirizzato su Eventbrite</p> -->
+                    
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer integrato -->
+    <div style="background:var(--black);color:var(--white);" class="w-full py-8 px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex items-center gap-6">
+                <img src="Assets/LABA_orange.svg" alt="LABA" class="h-8 w-auto object-contain opacity-90">
+                <span class="font-black text-[9px] uppercase tracking-[0.3em] opacity-40">Accademia LABA Brescia &copy; 2026</span>
+            </div>
+            <p class="font-black text-[9px] uppercase tracking-[0.25em] opacity-30">Via Don G. Vender, 66 · Brescia</p>
+        </div>
+    </div>
+
+<!-- ═══ WORKSHOP MODAL ══════════════════════════════════════════ -->
+<div id="ws-modal" style="position:fixed;inset:0;z-index:9999;visibility:hidden;">
+    <div id="ws-modal-backdrop" style="position:absolute;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);"></div>
+    <div id="ws-modal-box" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#f9f9f9;width:min(480px,92vw);max-height:90vh;overflow-y:auto;padding:40px 36px 36px;border-radius:2px;">
+        <div id="ws-modal-accent" style="position:absolute;top:0;left:0;width:100%;height:4px;background:var(--yellow);"></div>
+        <button id="ws-modal-close" aria-label="Chiudi" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:18px;cursor:pointer;font-weight:900;opacity:0.5;line-height:1;">✕</button>
+        <p id="ws-modal-evento" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.25em;opacity:0.5;margin-bottom:4px;"></p>
+        <h3 id="ws-modal-title" style="font-size:18px;font-weight:900;text-transform:uppercase;line-height:1.1;margin-bottom:28px;padding-right:24px;"></h3>
+
+        <!-- Form -->
+        <div id="ws-form-wrap">
+            <div class="ws-field" style="display:flex;flex-direction:column;gap:6px;margin-bottom:18px;">
+                <label for="ws-nome" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.2em;">Nome</label>
+                <input id="ws-nome" type="text" placeholder="Mario" autocomplete="given-name" required
+                    style="border:none;border-bottom:2px solid #111;padding:8px 4px;font-weight:700;font-size:14px;background:transparent;outline:none;width:100%;">
+            </div>
+            <div class="ws-field" style="display:flex;flex-direction:column;gap:6px;margin-bottom:18px;">
+                <label for="ws-cognome" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.2em;">Cognome</label>
+                <input id="ws-cognome" type="text" placeholder="Rossi" autocomplete="family-name" required
+                    style="border:none;border-bottom:2px solid #111;padding:8px 4px;font-weight:700;font-size:14px;background:transparent;outline:none;width:100%;">
+            </div>
+            <div class="ws-field" style="display:flex;flex-direction:column;gap:6px;margin-bottom:18px;">
+                <label for="ws-email" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.2em;">Email</label>
+                <input id="ws-email" type="email" placeholder="mario.rossi@email.it" autocomplete="email" required
+                    style="border:none;border-bottom:2px solid #111;padding:8px 4px;font-weight:700;font-size:14px;background:transparent;outline:none;width:100%;">
+            </div>
+            <div class="ws-field" style="display:flex;flex-direction:column;gap:6px;margin-bottom:28px;">
+                <label for="ws-orario" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.2em;">Orario</label>
+                <select id="ws-orario" required
+                    style="border:none;border-bottom:2px solid #111;padding:8px 4px;font-weight:700;font-size:14px;background:transparent;outline:none;width:100%;cursor:pointer;">
+                    <option value="">Scegli orario —</option>
+                </select>
+            </div>
+            <button id="ws-modal-submit" type="button"
+                style="width:100%;background:#111;color:#F2F2EF;padding:18px;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.35em;border:none;cursor:pointer;">
+                Conferma Iscrizione →
+            </button>
+            <p id="ws-modal-note" style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;opacity:0.4;text-align:center;margin-top:14px;">
+                Posti limitati · Riceverai conferma via email
+            </p>
+        </div>
+
+        <!-- Conferma -->
+        <div id="ws-modal-confirm" style="opacity:0;visibility:hidden;text-align:center;padding:20px 0;">
+            <div class="ws-confirm-circle" style="width:64px;height:64px;border-radius:50%;background:var(--purple);color:#fff;font-size:28px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">✓</div>
+            <p style="font-weight:900;font-size:16px;text-transform:uppercase;margin-bottom:12px;">Iscrizione confermata!</p>
+            <div style="font-size:12px;opacity:0.7;line-height:1.8;">
+                <span id="ws-confirm-nome" style="font-weight:700;"></span><br>
+                <span id="ws-confirm-workshop"></span><br>
+                ore <span id="ws-confirm-orario"></span>
+            </div>
+            <p style="font-size:9px;opacity:0.5;margin-top:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;">Controlla la posta in arrivo per il riepilogo.</p>
+        </div>
+    </div>
+</div>
+<!-- Bottone Torna Su -->
+<button 
+    id="backToTop" 
+    class="fixed bottom-8 right-8 z-50 p-4 bg-[var(--black)] text-[var(--white)] shadow-2xl translate-y-20 opacity-0 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center group"
+    aria-label="Torna in alto"
+>
+    <!-- Icona Freccia (SVG) -->
+   <!-- Freccia Squadrata Senza Glitch di Join -->
+    <svg 
+        width="22" 
+        height="22" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="3" 
+        stroke-linecap="butt" 
+        stroke-linejoin="miter"
+        class="group-hover:-translate-y-1 transition-transform"
+    >
+        <!-- Punta della freccia -->
+        <path d="M5 12l7-7 7 7" />
+        <!-- Asta della freccia (parte esattamente dal vertice) -->
+        <path d="M12 5v14" />
+    </svg>
+</button>
+<!-- ═══ SCRIPTS ═════════════════════════════════════════════════ -->
+<script>
+    var deg = function(v) { return v * (Math.PI / 180); };
+
+    var C = {
+        green:  '#13AC51',
+        blue:   '#3F5099',
+        cyan:   '#AFD6E1',
+        purple: '#A79ADB',
+        yellow: '#FDC603',
+        orange: '#FF7230',
+        white:  '#F2F2EF',
+        black:  '#111111'
+    };
+
+    var blocksConfig = [
+        { color: C.cyan,   pos: [0, 0, -500],     size: [800, 800], rot: [-90, 0, -45], content: '' },
+        { color: C.cyan,   pos: [-400, -600, 0],   size: [300, 800], rot: [0, -45, 90],  content: '' },
+        { color: C.cyan,   pos: [500, -800, 0],    size: [300, 600], rot: [0, -45, 90],  content: '' },
+        { color: C.yellow, pos: [300, -600, 400],  size: [600, 400], rot: [0, 45, 0],    content: '' },
+        { color: C.orange, pos: [-200, -500, 200], size: [400, 400], rot: [0, 45, 0],    content: '' },
+        { color: C.green,  pos: [-400, 50, 200],   size: [600, 400], rot: [0, 45, 0],    content: '' },
+        { color: C.blue,   pos: [0, -350, 600],    size: [750, 600], rot: [-90, 0, -45], content: '' },
+        { color: C.blue,   pos: [0, 50, -200],     size: [700, 400], rot: [-90, 0, -45], content: '' },
+        { color: C.purple, pos: [100, 25, 200],    size: [500, 500], rot: [0, -45, 0],   content: '' },
+        {
+            color: C.yellow, pos: [-170, 500, 80], size: [400, 220], rot: [0, 45, 0],
+            content: '<div style="width:100%;height:400px;display:flex;justify-content:center;align-items:flex-end;"><img src="Assets/SYN.png" alt="" style="width:70%;height:auto;"></div>'
+        },
+        {
+            color: C.orange, pos: [65, 480, 140], size: [500, 220], rot: [0, -45, 0],
+            content: '<div style="width:100%;height:400px;display:flex;justify-content:center;align-items:center;"><img src="Assets/APSES.png" alt="" style="width:90%;height:auto;"></div>'
+        },
+        {
+            color: C.cyan, pos: [-350, 0, 300], size: [600, 550], rot: [0, 45, 0],
+            url: '#SFILATA',
+            content: `
+            <div style="display:flex;flex-direction:column;justify-content:center;text-align:left;">
+                <h1 style="font-size:60px;font-weight:900;">PRŌSOPON</h1>
+                <p style="font-size:30px;font-weight:900;">FASHION SHOW</p>
+                <br><br><br><br>
+                <p style="font-size:30px;font-weight:900;">BRIXIA FORUM</p>
+                <p style="font-size:30px;font-weight:500;">VIA CAPRERA 5,<br>BRESCIA</p>
+                <br><br>
+                <p style="font-size:30px;font-weight:900;">INIZIO SPETTACOLO<br>h. 20:30</p>
+                <p style="font-size:30px;font-weight:500;">INGRESSO SU PRENOTAZIONE</p></div>`
+        },
+        {
+            color: C.black, pos: [-525, 100, 500], size: [300, 30], rot: [0, 45, 0],
+            content: '<div style="width:100%;height:100%;display:flex;align-items:center;"><h1 style="font-size:35px;color:var(--white);">23 GIUGNO</h1></div>'
+        },
+        {
+            color: C.yellow, pos: [50, 25, 200], size: [500, 525], rot: [0, -45, 0],
+            url: '#EXPO',
+            content: `
+            <div style="display:flex;flex-direction:column;text-align:right;">
+                <h1 style="font-size:60px;">EXPO DELLA<br>CREATIVIT\u00c0</h1>
+                <br><br><br><br><p style="font-size:30px;font-weight:900;">ACCADEMIA LABA</p>
+                <p style="font-size:30px;font-weight:500;">VIA DON G. VENDER, 66<br>BRESCIA</p>
+                <br><br><p style="font-size:30px;font-weight:900;">H. 14:00 - 18:00</p>
+                <p style="font-size:30px;font-weight:500;">INGRESSO LIBERO</p></div>`
+        },
+        {
+            color: C.black, pos: [175, 100, 350], size: [270, 50], rot: [0, -45, 0],
+            content: '<div style="width:100%;height:100%;display:flex;align-items:center;"><h1 style="font-size:35px;color:var(--white);">21 MAGGIO</h1></div>'
+        },
+        {
+            color: C.purple, pos: [0, -300, 500], size: [550, 500], rot: [-90, 0, -45],
+            url: '#DISORGANICHE',
+            content: `
+            <div style="display:flex;flex-direction:column;text-align:left;">
+                <h1 style="font-size:60px;">CRONACHE<br>DISORGANICHE</h1>
+                <p style="font-size:30px;font-weight:500;">INCROCI CREATIVI</p>
+                <br><br><br><br><br>
+                <p style="font-size:30px;font-weight:900;">ACCADEMIA LABA E MITA</p>
+                <p style="font-size:30px;font-weight:500;">ACCADEMIA LABA E MITA</p>
+                <p style="font-size:30px;font-weight:900;">H. 14:00 - 21:00</p></div>`
+        },
+        {
+            color: C.black, pos: [170, -285, 650], size: [250, 50], rot: [-90, 0, -45],
+            content: '<div style="width:100%;height:100%;display:flex;align-items:center;"><h1 style="font-size:30px;color:var(--white);">22 APRILE</h1></div>'
+        }
+    ];
+
+    /* ─── THREE.JS INIT ─── */
+    var scene, camera, renderer, pivot, group;
+    var isFocused = false, isMouseDown = false, px, py;
+
+    function init() {
+        scene  = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+
+        var isMobile = window.innerWidth < 768;
+        camera.position.set(0, 1000, isMobile ? 3750 : 2300);
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+        renderer = new THREE.CSS3DRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        pivot = new THREE.Group();
+        pivot.position.y = 150;
+
+        group = new THREE.Group();
+        scene.add(pivot);
+        pivot.add(group);
+
+        blocksConfig.forEach(function(data) {
+            var el = document.createElement('div');
+            el.className = 'card-3d';
+            el.style.width  = data.size[0] + 'px';
+            el.style.height = data.size[1] + 'px';
+            el.style.backgroundColor = data.color;
+            el.innerHTML = data.content;
+
+            var obj = new THREE.CSS3DObject(el);
+            obj.position.set(data.pos[0], data.pos[1], data.pos[2]);
+            obj.rotation.set(deg(data.rot[0]), deg(data.rot[1]), deg(data.rot[2]));
+            el.onclick = function() { if (!isMouseDown) redirectWithAnim(data.url, data.color); };
+            group.add(obj);
+        });
+
+        window.addEventListener('pointerdown', function(e) {
+            if (e.target.closest('#canvas-container')) { isMouseDown = true; px = e.clientX; py = e.clientY; }
+        });
+        window.addEventListener('pointermove', function(e) {
+            if (!isMouseDown || isFocused) return;
+            pivot.rotation.y += (e.clientX - px) * 0.003;
+            pivot.rotation.x += (e.clientY - py) * 0.003;
+            px = e.clientX; py = e.clientY;
+        });
+        window.addEventListener('pointerup', function() { isMouseDown = false; });
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    }
+
+    /* ─── NAVIGAZIONE ─── */
+    function redirectWithAnim(url, color) {
+        if (!url) return;
+
+        if (url.charAt(0) === '#') {
+            var target = document.getElementById(url.slice(1));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            return;
+        }
+
+        var overlay = document.getElementById('redirect-overlay');
+        overlay.style.background = color;
+        gsap.set(overlay, { autoAlpha: 0, scale: 0, borderRadius: '50%', transformOrigin: 'center center' });
+        gsap.to(overlay, {
+            autoAlpha: 1, scale: 4, duration: 0.5, ease: 'power3.in',
+            onComplete: function() {
+                gsap.to(overlay, {
+                    borderRadius: '0%', scale: 1, duration: 0.25, ease: 'none',
+                    onComplete: function() { window.location.href = url; }
+                });
+            }
+        });
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        if (!isMouseDown && !isFocused) pivot.rotation.y += 0.003;
+        renderer.render(scene, camera);
+    }
+
+    /* ─── MAPPE ─── */
+    var mapData = [
+        {
+            img: 'PIANTINA1.png',
+            accentColor: 'var(--purple)',
+            locations: [
+                { top: '15%', left: '50%', w: '18%', h: '15%', name: 'Velvet Sky / Giardino',    desc: 'Food & Bar · 16:00–19:00', anchor: '#DISORGANICHE' },
+                { top: '30%', left: '45%', w: '6%',  h: '10%', name: 'Future Orange',             desc: 'Interviste agli ospiti · 15:00–19:00', anchor: '#DISORGANICHE' },
+                { top: '32%', left: '50%', w: '17%', h: '20%', name: 'Think Violet / Atrio',      desc: 'Talk, Masterchef Grafica · 15:00–18:00', anchor: '#DISORGANICHE' },
+                { top: '50%', left: '40%', w: '15%', h: '15%', name: 'Giardino',                  desc: 'Food & Bar 16:00–19:00 · Cocktail bar 19:00–20:00', anchor: '#DISORGANICHE' },
+                { top: '50%', left: '65%', w: '10%', h: '12%', name: 'Make Grey B03',             desc: 'Workshop & Masterclass · 15:00–17:00', anchor: '#DISORGANICHE' },
+                { top: '40%', left: '75%', w: '12%', h: '12%', name: 'Creative Space B04',        desc: 'Presentazione Tesi · 15:00–17:15', anchor: '#DISORGANICHE' },
+                { top: '30%', left: '85%', w: '15%', h: '15%', name: 'White Share B05',           desc: 'Collaborazioni con Aziende · 15:00–18:00', anchor: '#DISORGANICHE' },
+                { top: '60%', left: '2%',  w: '22%', h: '28%', name: 'MITA — Sala Concerti',     desc: 'TED · 17:00–18:30 · Andy dei Bluvertigo h.20:00', anchor: '#DISORGANICHE' }
+            ]
+        },
+        {
+            img: 'PIANTINA2.png',
+            accentColor: 'var(--yellow)',
+            locations: [
+                { top: '76%', left: '28%', w: '10%', h: '12%', name: 'Aula A39 — Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#EXPO' },
+                { top: '14%', left: '50%', w: '12%', h: '12%', name: 'Aula A58',                         desc: 'Workshop Serigrafia "Bestiari" + Urban Design', anchor: '#EXPO' },
+                { top: '22%', left: '76%', w: '20%', h: '20%', name: 'Aule A46 / A47 — Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#EXPO' },
+                { top: '40%', left: '20%', w: '20%', h: '20%', name: 'Aula Magna — Palco Centrale',      desc: 'Biennio Cinema, Awards & Contest · 10:00–14:00+', anchor: '#EXPO' },
+                { top: '40%', left: '57%', w: '10%', h: '10%', name: 'Aule A40 / A52 — Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#EXPO' },
+                { top: '2%', left: '78%', w: '12%', h: '12%', name: 'Aula A53 — Fashion Design',        desc: 'LABAtelier + Workshop "Made to Measure" · 14:00–17:00', anchor: '#EXPO' },
+                { top: '52%', left: '36%', w: '12%', h: '12%', name: 'Aula A62 / Mensa — Fotografia',    desc: 'Geografie Instabili + Workshop Antotipia', anchor: '#EXPO' }
+            ]
+        },
+        {
+            img: 'PIANTINA3.png',
+            accentColor: 'var(--cyan)',
+            locations: [
+                { top: '34%', left: '18%', w: '12%', h: '18%', name: 'Ingresso — Red Carpet',   desc: 'Accoglienza e Red Carpet · 19:30', anchor: '#SFILATA' },
+                { top: '30%', left: '30%', w: '30%', h: '30%', name: 'Brixia Forum — Main Hall', desc: 'PRŌSOPON Fashion Show · Triennio & Biennio Fashion · 20:30', anchor: '#SFILATA' }
+            ]
+        }
+    ];
+
+    function initMap(container) {
+        var index   = parseInt(container.getAttribute('data-map-index'), 10);
+        var data    = mapData[index];
+        var infoBox = container.querySelector('.info-box-inner');
+        var img     = container.querySelector('.map-img');
+        var layer   = container.querySelector('.hotspot-layer');
+        var locked  = false;   /* desktop: card bloccata al click */
+        var activeHs = null;
+
+        /* ── FIX STRUTTURA: wrapper relativo sull'immagine ── */
+        var wrapper = document.createElement('div');
+        wrapper.style.cssText = 'position:relative;width:90%;max-width:800px;display:block;line-height:0;';
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+        wrapper.appendChild(layer);
+
+        layer.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:20;';
+        img.style.cssText   = 'width:100%;height:auto;display:block;position:relative;z-index:10;';
+
+        /* Link "Vai al programma" dentro l'infobox */
+        var linkEl = document.createElement('a');
+        linkEl.className = 'info-link';
+        linkEl.textContent = '→ Vai al programma';
+        linkEl.style.cssText = 'display:none;margin-top:10px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:var(--black);text-decoration:none;border-bottom:1.5px solid var(--black);pointer-events:auto;cursor:pointer;';
+        infoBox.appendChild(linkEl);
+
+        function showInfo(loc) {
+            infoBox.querySelector('.info-name').innerText = loc.name;
+            infoBox.querySelector('.info-desc').innerText = loc.desc;
+            linkEl.href = loc.anchor || '#';
+            linkEl.style.display = 'inline-block';
+            gsap.to(infoBox, { opacity: 1, duration: 0.22, ease: 'power2.out' });
+        }
+        function hideInfo() {
+            gsap.to(infoBox, { opacity: 0, duration: 0.18 });
+        }
+
+        var isMobile = ('ontouchstart' in window);
+
+        data.locations.forEach(function(loc) {
+            var hs = document.createElement('div');
+            hs.className = 'hotspot';
+            hs.style.cssText = 'position:absolute;cursor:pointer;z-index:30;pointer-events:auto;-webkit-tap-highlight-color:transparent;' +
+                               'top:' + loc.top + ';left:' + loc.left + ';width:' + loc.w + ';height:' + loc.h;
+
+            if (isMobile) {
+                /* MOBILE: tap toggle */
+                hs.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                    if (activeHs === hs && locked) {
+                        locked = false; activeHs = null; hideInfo();
+                    } else {
+                        locked = true; activeHs = hs; showInfo(loc);
+                    }
+                }, { passive: true });
+            } else {
+                /* DESKTOP: hover per preview, click per bloccare */
+                hs.addEventListener('mouseenter', function() {
+                    if (!locked) showInfo(loc);
+                });
+                hs.addEventListener('mouseleave', function() {
+                    if (!locked) hideInfo();
+                });
+                hs.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (locked && activeHs === hs) {
+                        /* secondo click sullo stesso: sblocca */
+                        locked = false; activeHs = null; hideInfo();
+                    } else {
+                        locked = true; activeHs = hs; showInfo(loc);
+                    }
+                });
+            }
+
+            layer.appendChild(hs);
+        });
+
+        /* Click fuori dall'infobox e dagli hotspot → sblocca */
+        document.addEventListener('click', function(e) {
+            if (!locked) return;
+            if (!infoBox.contains(e.target) && !e.target.closest('.hotspot')) {
+                locked = false; activeHs = null; hideInfo();
+            }
+        });
+        container.addEventListener('touchstart', function(e) {
+            if (e.target.closest('.hotspot') || e.target.closest('.info-box-inner')) return;
+            locked = false; activeHs = null; hideInfo();
+        }, { passive: true });
+
+        /* Info-box segue il cursore su desktop */
+        container.addEventListener('mousemove', function(e) {
+            if (locked) return;
+            var rect = container.getBoundingClientRect();
+            var x = e.clientX - rect.left + 20;
+            var y = e.clientY - rect.top  - 20;
+            if (x + 260 > rect.width) x = e.clientX - rect.left - 270;
+            gsap.to(infoBox, { left: x, top: y, duration: 0.35, ease: 'power2.out' });
+        });
+    }
+
+    /* ─── ANIMAZIONE CARD FESTIVAL ─── */
+    var festivalTriggers = document.querySelectorAll('.trigger-area');
+    var isMobileDevice   = window.innerWidth < 768;
+
+    var festivalConfigs = isMobileDevice ? [
+        { rotX: 10,  rotY: -5,  rotZ: -2, z: 0 },
+        { rotX: -8,  rotY: 8,   rotZ: 2,  z: 0 },
+        { rotX: 5,   rotY: -10, rotZ: 3,  z: 0 }
+    ] : [
+        { rotX: 15,  rotY: -25, rotZ: -10, z: -100 },
+        { rotX: -10, rotY: 15,  rotZ: -5,  z: 50   },
+        { rotX: 25,  rotY: 10,  rotZ: 5,   z: -100 }
+    ];
+
+    festivalTriggers.forEach(function(trigger, i) {
+        var plane = trigger.querySelector('.floating-plane');
+        var conf  = festivalConfigs[i];
+
+        gsap.set(plane, { rotationX: conf.rotX, rotationY: conf.rotY, rotationZ: conf.rotZ, z: conf.z });
+
+        var bounce = gsap.to(plane, {
+            y: isMobileDevice ? 10 : 20,
+            rotationX: '+=' + 3,
+            duration: 3 + i,
+            yoyo: true,
+            repeat: -1,
+            ease: 'sine.inOut'
+        });
+
+        function activate() {
+            bounce.pause();
+            trigger.style.zIndex = '100';
+            var moveX = 0;
+            if (!isMobileDevice) {
+                if (i === 0) moveX = 30;
+                if (i === 2) moveX = -30;
+            }
+            gsap.to(plane, {
+                rotationX: 0, rotationY: 0, rotationZ: 0,
+                x: moveX,
+                z: isMobileDevice ? 50 : 200,
+                scale: 1,
+                duration: 0.5,
+                ease: 'expo.out'
+            });
+        }
+
+        function deactivate() {
+            trigger.style.zIndex = '5';
+            gsap.to(plane, {
+                rotationX: conf.rotX, rotationY: conf.rotY, rotationZ: conf.rotZ,
+                x: 0, z: conf.z, scale: 1,
+                duration: 0.6,
+                ease: 'power2.inOut',
+                onComplete: function() { bounce.play(); }
+            });
+        }
+
+        trigger.addEventListener('mouseenter', activate);
+        trigger.addEventListener('mouseleave', deactivate);
+
+        /* FIX: aggiunto touchend/touchcancel per deactivare la card su mobile
+           (prima la card rimaneva "aperta" indefinitamente dopo il tap) */
+        trigger.addEventListener('touchstart', activate, { passive: true });
+        trigger.addEventListener('touchend',   deactivate, { passive: true });
+        trigger.addEventListener('touchcancel', deactivate, { passive: true });
+    });
+
+    /* ─── COUNTDOWN ─── */
+    function initFestivalTimers() {
+    const groups = document.querySelectorAll('.timer-group');
+
+    function update() {
+        const now = new Date().getTime();
+
+        groups.forEach(group => {
+            const target = new Date(group.dataset.date).getTime();
+            const diff = target - now;
+            const display = group.querySelector('.flex');
+
+            if (diff < 0) {
+                display.innerHTML = `
+                 <div id="cd-DISORGANICHE" class="flex gap-3 md:gap-6">
+                    <div class="flex flex-col"><span class="days font-black text-sm md:text-2xl tabular-nums" style="color:var(--purple);">00</span><span class="text-[7px] uppercase opacity-50 font-bold">Giorni</span></div>
+                    <div class="flex flex-col"><span class="hours font-black text-sm md:text-2xl tabular-nums" style="color:var(--purple);">00</span><span class="text-[7px] uppercase opacity-50 font-bold">Ore</span></div>
+                    <div class="flex flex-col"><span class="minutes font-black text-sm md:text-2xl tabular-nums" style="color:var(--purple);">00</span><span class="text-[7px] uppercase opacity-50 font-bold">Min</span></div>
+                </div>
+                    `;
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            tick(group.querySelector('.days'), d);
+            tick(group.querySelector('.hours'), h);
+            tick(group.querySelector('.minutes'), m);
+        });
+    }
+
+    function tick(el, val) {
+        const newVal = val < 10 ? '0' + val : val;
+        if (el.innerText !== String(newVal)) {
+            // Animazione interattiva al cambio numero
+            gsap.to(el, { 
+                scale: 1.2, 
+                duration: 0.1, 
+                onComplete: () => {
+                    el.innerText = newVal;
+                    gsap.to(el, { scale: 1, duration: 0.4, ease: "back.out(2)" });
+                } 
+            });
+        }
+    }
+
+    setInterval(update, 1000);
+    update();
+}
+
+initFestivalTimers();
+
+    /* ─── AVVIO ─── */
+    init();
+    document.querySelectorAll('.map-container').forEach(function(c) { initMap(c); });
+
+    /* Ping va aggiunto DOPO initMap che crea gli hotspot */
+    document.querySelectorAll('.hotspot').forEach(function(hs, i) {
+        var ping = document.createElement('div');
+        ping.className = 'hotspot-ping';
+        /* delay casuale per non sincronizzare tutti i ping */
+        ping.style.setProperty('--ping-delay', (i * 0.28 % 2).toFixed(2) + 's');
+        hs.appendChild(ping);
+    });
+</script>
+<script>
+/* =================================================================
+   forms.js — Synapses 2026 — INLINED
+   ================================================================= */
+
+var WS_CONFIG = {
+    'Masterchef della Grafica': {
+        evento: '22 Aprile — Cronache Disorganiche',
+        orari: ['15:00', '16:00']
+    },
+    'Fanzine AI': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:00', '15:30', '16:00']
+    },
+    'Generazione Immagini Comfy': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:00', '15:30', '16:00']
+    },
+    'Sviluppo 3D Meshy e Stampa 3D': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:00', '16:00']
+    },
+    'Pack Design': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:00', '16:00']
+    },
+    'Creare con le AI': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['14:00', '15:00']
+    },
+    'Incisione e Stampa': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:30', '16:30']
+    },
+    'Cianotipia — Vedo Blu': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['15:30', '16:30']
+    },
+    'Serigrafia — Bestiari': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['10:00', '11:00']
+    },
+    'Graphic Design nel Cinema': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['14:00', '15:30']
+    },
+    'Made to Measure LABA!': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['14:00', '15:00', '16:00']
+    },
+    'Antotipia': {
+        evento: '21 Maggio — Expo della Creatività',
+        orari: ['14:00', '15:30']
+    }
+};
+
+/* ── FORM PRENOTAZIONE PRŌSOPON ── */
+(function () {
+    var form        = document.getElementById('form-prosopon');
+    var btnSubmit   = document.getElementById('form-prosopon-btn');
+    var confirmBox  = document.getElementById('form-prosopon-confirm');
+    var confirmName = document.getElementById('form-prosopon-confirm-name');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var nome    = form.querySelector('#p-nome').value.trim();
+        var cognome = form.querySelector('#p-cognome').value.trim();
+        var email   = form.querySelector('#p-email').value.trim();
+
+        if (!nome || !cognome || !email) return;
+
+        btnSubmit.disabled    = true;
+        btnSubmit.textContent = 'Invio in corso…';
+
+        var fd = new FormData();
+        fd.append('nome',    nome);
+        fd.append('cognome', cognome);
+        fd.append('email',   email);
+
+        fetch('send_prenotazione.php', { method: 'POST', body: fd })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.ok) {
+                    confirmName.textContent = nome;
+                    gsap.set(confirmBox, { autoAlpha: 0, y: 20, pointerEvents: 'auto' });
+                    gsap.to(confirmBox, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'expo.out' });
+                    var circle = confirmBox.querySelector('.confirm-circle');
+                    if (circle) {
+                        gsap.fromTo(circle,
+                            { scale: 0, rotation: -30 },
+                            { scale: 1, rotation: 0, duration: 0.55, delay: 0.2, ease: 'back.out(1.7)' }
+                        );
+                    }
+                } else {
+                    alert(data.msg || 'Errore. Riprova.');
+                    btnSubmit.disabled    = false;
+                    btnSubmit.textContent = 'Conferma Posto →';
+                }
+            })
+            .catch(function () {
+                alert('Errore di rete. Controlla la connessione e riprova.');
+                btnSubmit.disabled    = false;
+                btnSubmit.textContent = 'Conferma Posto →';
+            });
+    });
+}());
+
+/* ── ACCORDION WORKSHOP ── */
+document.querySelectorAll('.ws-accordion-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+        var item   = trigger.closest('.ws-accordion-item');
+        var body   = item.querySelector('.ws-accordion-body');
+        var isOpen = item.classList.contains('open');
+        var arrow  = trigger.querySelector('.ws-arrow');
+
+        document.querySelectorAll('.ws-accordion-item.open').forEach(function (other) {
+            if (other === item) return;
+            var otherBody  = other.querySelector('.ws-accordion-body');
+            var otherArrow = other.querySelector('.ws-arrow');
+            other.classList.remove('open');
+            gsap.to(otherBody, { height: 0, duration: 0.35, ease: 'power2.inOut',
+                onComplete: function () { otherBody.style.display = 'none'; } });
+            if (otherArrow) gsap.to(otherArrow, { rotation: 0, duration: 0.3 });
+        });
+
+        if (isOpen) {
+            item.classList.remove('open');
+            gsap.to(body, { height: 0, duration: 0.35, ease: 'power2.inOut',
+                onComplete: function () { body.style.display = 'none'; } });
+            if (arrow) gsap.to(arrow, { rotation: 0, duration: 0.3 });
+        } else {
+            item.classList.add('open');
+            body.style.display = 'block';
+            body.style.height  = '0px';
+            gsap.to(body, { height: 'auto', duration: 0.4, ease: 'power2.out' });
+            if (arrow) gsap.to(arrow, { rotation: 180, duration: 0.3 });
+        }
+    });
+});
+
+/* ── MODAL WORKSHOP ── */
+var wsModal     = document.getElementById('ws-modal');
+var wsBackdrop  = document.getElementById('ws-modal-backdrop');
+var wsBox       = document.getElementById('ws-modal-box');
+var wsFormWrap  = document.getElementById('ws-form-wrap');
+var wsConfirm   = document.getElementById('ws-modal-confirm');
+var wsTitle     = document.getElementById('ws-modal-title');
+var wsOrariSel  = document.getElementById('ws-orario');
+var wsSubmitBtn = document.getElementById('ws-modal-submit');
+
+var currentWsName = '';
+
+function openWsModal(workshopName, orari, eventoLabel) {
+    // Prova prima dal config, poi dai parametri diretti
+    var cfg = WS_CONFIG[workshopName];
+    var resolvedOrari  = cfg ? cfg.orari  : (orari || []);
+    var resolvedEvento = cfg ? cfg.evento : (eventoLabel || '');
+
+    currentWsName = workshopName;
+
+    wsTitle.textContent = workshopName;
+    document.getElementById('ws-modal-evento').textContent = resolvedEvento;
+
+    wsOrariSel.innerHTML = '<option value="">Scegli orario —</option>';
+    resolvedOrari.forEach(function (h) {
+        var opt = document.createElement('option');
+        opt.value = h;
+        opt.textContent = 'ore ' + h;
+        wsOrariSel.appendChild(opt);
+    });
+
+    document.getElementById('ws-nome').value    = '';
+    document.getElementById('ws-cognome').value = '';
+    document.getElementById('ws-email').value   = '';
+    wsOrariSel.value = '';
+
+    gsap.set(wsConfirm,  { autoAlpha: 0, pointerEvents: 'none' });
+    gsap.set(wsFormWrap, { autoAlpha: 1, pointerEvents: 'auto' });
+    wsSubmitBtn.disabled    = false;
+    wsSubmitBtn.textContent = 'Conferma Iscrizione →';
+
+    wsModal.style.visibility = 'visible';
+    wsBackdrop.style.pointerEvents = 'auto';
+    gsap.set(wsBackdrop, { opacity: 0 });
+    gsap.set(wsBox,      { opacity: 0, y: 32, scale: 0.96 });
+    gsap.to(wsBackdrop,  { opacity: 1, duration: 0.3 });
+    gsap.to(wsBox,       { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out' });
+
+    var sw = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = sw + 'px';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeWsModal() {
+    gsap.to(wsBackdrop, { opacity: 0, duration: 0.2 });
+    gsap.to(wsBox, {
+        opacity: 0, y: 20, scale: 0.97, duration: 0.25, ease: 'power2.in',
+        onComplete: function () {
+            wsModal.style.visibility = 'hidden';
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        }
+    });
+}
+
+wsBackdrop.addEventListener('click', function (e) {
+    if (e.target === wsBackdrop) closeWsModal();
+});
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeWsModal();
+});
+document.getElementById('ws-modal-close').addEventListener('click', closeWsModal);
+
+wsSubmitBtn.addEventListener('click', function () {
+    var nome    = document.getElementById('ws-nome').value.trim();
+    var cognome = document.getElementById('ws-cognome').value.trim();
+    var email   = document.getElementById('ws-email').value.trim();
+    var orario  = wsOrariSel.value;
+    var cfg     = WS_CONFIG[currentWsName];
+
+    if (!nome || !cognome || !email || !orario) {
+        [['ws-nome', nome], ['ws-cognome', cognome], ['ws-email', email]].forEach(function (pair) {
+            if (!pair[1]) {
+                gsap.fromTo(document.getElementById(pair[0]),
+                    { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1,0.3)' });
+            }
+        });
+        if (!orario) {
+            gsap.fromTo(wsOrariSel, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1,0.3)' });
+        }
+        return;
+    }
+
+    wsSubmitBtn.disabled    = true;
+    wsSubmitBtn.textContent = 'Invio in corso…';
+
+    var fd = new FormData();
+    fd.append('nome',     nome);
+    fd.append('cognome',  cognome);
+    fd.append('email',    email);
+    fd.append('workshop', currentWsName);
+    fd.append('orario',   orario);
+    fd.append('evento',   cfg ? cfg.evento : '');
+
+    fetch('send_workshop.php', { method: 'POST', body: fd })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (data.ok) {
+                document.getElementById('ws-confirm-nome').textContent     = nome + ' ' + cognome;
+                document.getElementById('ws-confirm-workshop').textContent = currentWsName;
+                document.getElementById('ws-confirm-orario').textContent   = orario;
+
+                gsap.to(wsFormWrap, { autoAlpha: 0, duration: 0.2,
+                    onComplete: function () { wsFormWrap.style.pointerEvents = 'none'; } });
+                gsap.set(wsConfirm, { autoAlpha: 0, pointerEvents: 'auto' });
+                gsap.to(wsConfirm, { autoAlpha: 1, duration: 0.45, delay: 0.15, ease: 'power2.out' });
+
+                var circle = wsConfirm.querySelector('.ws-confirm-circle');
+                if (circle) {
+                    gsap.fromTo(circle,
+                        { scale: 0, rotation: -20 },
+                        { scale: 1, rotation: 0, duration: 0.5, delay: 0.35, ease: 'back.out(1.7)' }
+                    );
+                }
+            } else {
+                alert(data.msg || 'Errore. Riprova.');
+                wsSubmitBtn.disabled    = false;
+                wsSubmitBtn.textContent = 'Conferma Iscrizione →';
+            }
+        })
+        .catch(function () {
+            alert('Errore di rete. Controlla la connessione e riprova.');
+            wsSubmitBtn.disabled    = false;
+            wsSubmitBtn.textContent = 'Conferma Iscrizione →';
+        });
+});
+
+window.openWsModal  = openWsModal;
+window.closeWsModal = closeWsModal;
+</script>
+
+<script>
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        // Se lo scroll supera i 400px, mostra il bottone, altrimenti nascondilo
+        if (window.scrollY > 400) {
+            backToTopButton.classList.remove('translate-y-20', 'opacity-0');
+            backToTopButton.classList.add('translate-y-0', 'opacity-100');
+        } else {
+            backToTopButton.classList.add('translate-y-20', 'opacity-0');
+            backToTopButton.classList.remove('translate-y-0', 'opacity-100');
+        }
+    });
+
+    // Azione al click
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Scroll fluido
+        });
+    });
+</script>
+</body>
+</html>

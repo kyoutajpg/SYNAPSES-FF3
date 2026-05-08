@@ -1,0 +1,475 @@
+/* ─── VARIABILI COLORE ─── */
+:root {
+    --green:  #13AC51;
+    --blue:   #3F5099;
+    --cyan:   #AFD6E1;
+    --purple: #A79ADB;
+    --yellow: #FDC603;
+    --orange: #FF7230;
+    --white:  #f9f9f9;
+    --black:  #2b2b2b;
+}
+
+/* ─── FONT ─── */
+@font-face {
+    font-family: 'Adapter Mono PE';
+    src: url('../Fonts/AdapterMonoPE-Variable.woff2') format('woff2');
+    font-weight: 100 700;
+    font-display: swap; /* evita FOIT su connessioni lente */
+}
+
+@font-face {
+    font-family: 'DIN-BOLD';
+    src: url('../Fonts/DIN-BOLD.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ─── RESET / BASE ─── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Adapter Mono PE', monospace;
+    background-color: var(--white);
+    color: var(--black);
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: auto; /* previene pull-to-refresh accidentale su Android */
+}
+
+/* ─── HERO 3D ─── */
+#canvas-container {
+    height: 100svh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    z-index: 1;
+}
+
+#canvas-container > div {
+    pointer-events: none;
+}
+
+.card-3d {
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+    padding: 30px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent; /* rimuove il flash blu al tap su Android */
+}
+
+.card-3d h1 { font-weight: 900; text-transform: uppercase; line-height: 0.85; }
+.card-3d h2 { font-weight: 600; text-transform: uppercase; line-height: 1.2; }
+.card-3d p  { font-weight: 100; text-transform: uppercase; margin-top: 15px; line-height: 1; }
+
+/* ─── REDIRECT OVERLAY ─── */
+#redirect-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ─── SEZIONE FESTIVAL (piani 3D) ─── */
+.perspective-scene {
+    perspective: 1500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.planes-container-3d {
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 1350px;
+}
+
+.trigger-area {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 85%;
+    max-width: 320px;
+    height: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.trigger-area:nth-child(1) { top: 0; }
+.trigger-area:nth-child(2) { top: 450px; }
+.trigger-area:nth-child(3) { top: 900px; }
+
+.floating-plane {
+    pointer-events: none;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+}
+
+.plane-content {
+    pointer-events: auto;
+    backface-visibility: hidden;
+    height: 100%;
+}
+
+/* ─── MAPPA ─── */
+.map-container {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.map-img {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+/* Il layer hotspot non riceve eventi: li gestiscono i singoli .hotspot */
+.hotspot-layer {
+    position: absolute;
+    width: 90%;
+    max-width: 800px;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    z-index: 20;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-box-inner {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--black);
+    padding: 10px 15px;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    min-width: 180px;
+    max-width: 250px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ─── SLIDESHOW WEEKEND ─── */
+.wf-slideshow-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
+}
+
+.wf-track {
+    display: flex;
+    align-items: flex-start;
+    will-change: transform;
+}
+
+.wf-slide {
+    flex-shrink: 0;
+    width: 80vw;
+    max-width: 650px;
+    cursor: pointer;
+}
+
+.wf-slide .map-container {
+    padding: 64px 0 0;
+    margin: 0;
+}
+
+.wf-date-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.wf-date-bar span {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+/* ─── HELPER: a capo solo su mobile ─── */
+@media (min-width: 600px) {
+    .mobile-break { display: none; }
+}
+
+/* ─── TABLET / DESKTOP (≥ 768px) ─── */
+@media (min-width: 768px) {
+
+    .planes-container-3d {
+        height: 700px;
+    }
+
+    /* Reset posizione mobile e ridefinizione desktop */
+    .trigger-area {
+        left: auto;
+        transform: none;
+    }
+
+    .trigger-area:nth-child(1) { left: 6%;   top: 50px; }
+    .trigger-area:nth-child(2) { left: 50%;  top: 100px; transform: translateX(-50%); }
+    .trigger-area:nth-child(3) { right: 6%;  left: auto; top: 50px; } /* left:auto sovrascrive il mobile */
+
+    .info-box-inner {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .wf-slide {
+        width: 90vw;
+        max-width: 950px;
+    }
+}
+
+/* ─── COUNTDOWN ─── */
+.countdown-badge {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-bottom: 12px;
+}
+.countdown-badge .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+    padding: 6px 10px 4px;
+    min-width: 44px;
+}
+.countdown-badge .cd-num {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+.countdown-badge .cd-lbl {
+    font-size: 7px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+.countdown-badge.expired .cd-num { font-size: 11px; opacity: 0.6; }
+
+/* ─── MAP PING ─── */
+.hotspot-ping {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.hotspot-ping::before,
+.hotspot-ping::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+    width: 14px;
+    height: 14px;
+}
+.hotspot-ping::before {
+    animation: ping-pulse 2s ease-out infinite;
+    animation-delay: var(--ping-delay, 0s);
+}
+.hotspot-ping {
+    --ping-delay: 0s;
+}
+.hotspot-ping::after {
+    width: 8px;
+    height: 8px;
+    background: rgba(0,0,0,0.75);
+}
+@keyframes ping-pulse {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    70%  { transform: scale(2.8); opacity: 0; }
+    100% { transform: scale(2.8); opacity: 0; }
+}
+
+/* ─── WORKSHOP MODAL ─── */
+.ws-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(43,43,43,0.7);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.ws-modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+.ws-modal {
+    background: var(--white);
+    max-width: 480px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    max-height: 92svh;
+    overflow-y: auto;
+}
+.ws-modal-backdrop.open .ws-modal {
+    transform: translateY(0);
+}
+.ws-modal-header {
+    padding: 24px 24px 16px;
+}
+.ws-modal-body { padding: 24px; }
+.ws-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 18px;
+    border: 2px solid var(--black);
+    background: transparent;
+    font-family: inherit;
+}
+.ws-modal-close:hover { background: var(--black); color: var(--white); }
+
+.ws-form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.ws-form-field label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; }
+.ws-form-field input, .ws-form-field select {
+    border: none;
+    border-bottom: 2px solid var(--black);
+    padding: 8px 4px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.ws-form-field input:focus, .ws-form-field select:focus { border-color: var(--purple); }
+.ws-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--black);
+    color: var(--white);
+    font-family: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+}
+.ws-submit-btn:hover { background: var(--purple); color: var(--black); }
+
+/* ─── PRENOTA WS BUTTON (inline nel programma) ─── */
+.ws-book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: 1.5px solid var(--black);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.ws-book-btn:hover { background: var(--black); color: var(--white); }
+
+/* ─── CONFERMA PRENOTAZIONE ─── */
+#booking-success {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 10;
+}
+.booking-success-wrap { position: relative; }
+.success-check {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 28px;
+    color: var(--white);
+}
+
+/* ─── SOLO MOBILE (< 768px) ─── */
+@media (max-width: 767px) {
+
+    /* Info-box fisso in basso: evita che esca dallo schermo */
+    .info-box-inner {
+        position: absolute;
+        bottom: 10px;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* niente scale: GSAP gestisce opacity */
+        top: auto !important;
+        width: 90%;
+        max-width: none;
+        text-align: center;
+    }
+
+    .map-container {
+        padding: 40px 10px;
+        min-height: 350px;
+    }
+}

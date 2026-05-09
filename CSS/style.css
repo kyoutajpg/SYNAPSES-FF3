@@ -473,3 +473,14 @@ body {
         min-height: 350px;
     }
 }
+ .accordion-trigger { transition: filter 0.2s; }
+        .accordion-trigger:hover { filter: brightness(1.07); }
+        .accordion-body { will-change: height; }
+        .accordion-icon {
+            min-width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .acc-icon-svg { display: block; overflow: visible; }

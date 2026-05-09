@@ -16,6 +16,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .accordion-trigger { transition: filter 0.2s; }
+        .accordion-trigger:hover { filter: brightness(1.07); }
+        .accordion-body { will-change: height; }
+        .accordion-icon {
+            min-width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .acc-icon-svg { display: block; overflow: visible; }
+    </style>
 </head>
 <body>
 
@@ -90,7 +103,7 @@
                     <p class="text-md font-black">ACCADEMIA LABA E MITA</p>
                      <p class="text-md">VIA PRIVATA DE VITALIS, 1</p>
                     <p class="text-md font-black">H. 14:00 - 21:00</p>
-                    <a href="#DISORGANICHE" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
+                    <a href="#DISORGANICHE" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-sm md:text-xs md:py-3 hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
                 </div>
             </div>
         </div>
@@ -108,7 +121,7 @@
                     <p class="font-black text-md">H. 14:00 - 18:00</p>
                     <p class="text-md">INGRESSO LIBERO</p>
 
-                    <a href="#EXPO" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
+                    <a href="#EXPO" class="mt-auto border-2 border-[var(--black)] py-4 text-center font-black uppercase text-sm md:text-xs md:py-3 hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PROGRAMMA</a>
                 </div>
             </div>
         </div>
@@ -127,7 +140,7 @@
                             <p class="font-black text-md">INIZIO SPETTACOLO<br>H. 20:30</p>
                             <p class="text-md">INGRESSO SU PRENOTAZIONE</p>
 
-                            <a href="#SFILATA" class="mt-auto border-2 border-[var(--black)] py-3 text-center font-black uppercase text-xs hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PRENOTA BIGLIETTO</a>
+                            <a href="#SFILATA" class="mt-auto border-2 border-[var(--black)] py-4 text-center font-black uppercase text-sm md:text-xs md:py-3 hover:bg-[var(--black)] hover:text-white transition-all text-[var(--black)]">PRENOTA BIGLIETTO</a>
                         </div>
                     </div>
                 </div>
@@ -140,17 +153,23 @@
         <h2 class="font-black text-5xl uppercase mb-16 tracking-tighter">Il Programma</h2>
 
         <!-- ── Evento 01 — Cronache Disorganiche (22 APRILE) ──────────────────── -->
-        <div id="DISORGANICHE" class="mb-2">
-            <div class="flex" style="background: var(--purple);">
+        <div id="DISORGANICHE" class="accordion-item mb-2">
+            <div class="accordion-trigger flex cursor-pointer select-none" style="background: var(--purple);" role="button" aria-expanded="false">
+                <span class="accordion-icon px-4 shrink-0">
+                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg>
+                </span>
                 <div class="flex-1 px-6 py-4">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache Disorganiche</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-80">Incroci Creativi</p>
                 </div>
                 <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">22 APRILE</span>
             </div>
-        </div>
+            <div class="accordion-body" style="height:0;overflow:hidden;">
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Think Violet <br class="mobile-break"> (Meeting Point - Atrio)</h4>
+        <h4 id="dis-think" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Think Violet <br class="mobile-break"> (Meeting Point - Atrio)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
@@ -182,7 +201,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Axis01 (Interaction - Aula B10)</h4>
+        <h4 id="dis-axis01" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Axis01 (Interaction - Aula B10)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00&nbsp; 18:00</div>
@@ -200,7 +219,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Creative Space & Share <br class="mobile-break"> (Aule B04/B05)</h4>
+        <h4 id="dis-creative" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Creative Space & Share <br class="mobile-break"> (Aule B04/B05)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 18:00</div>
@@ -219,7 +238,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Workshop & Labs <br class="mobile-break"> (Make Grey - Aula B03)</h4>
+        <h4 id="dis-workshop" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Workshop & Labs <br class="mobile-break"> (Make Grey - Aula B03)</h4>
         <div class="mb-10 bg-white">
             <div class="flex">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 17:00</div>
@@ -237,7 +256,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Velvet Sky (Cortile)</h4>
+        <h4 id="dis-velvet" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">Velvet Sky (Cortile)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:00&nbsp; 18:00</div>
@@ -255,7 +274,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">MITA (Collaborazioni & Music)</h4>
+        <h4 id="dis-mita" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--purple)]">MITA (Collaborazioni & Music)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">16:00&nbsp; 17:30</div>
@@ -284,18 +303,27 @@
             <div class="hotspot-layer"></div>
         </div>
 
+            </div><!-- end accordion-body DISORGANICHE -->
+        </div><!-- end accordion-item DISORGANICHE -->
+
         <!-- ── Evento 02 — Expo della Creatività (21 MAGGIO) ──────────────────── -->
-        <div class="mb-2 mt-24" id="EXPO">
-            <div class="flex justify-end" style="background:var(--yellow);">
+        <div class="accordion-item mb-2 mt-24" id="EXPO">
+            <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--yellow);" role="button" aria-expanded="false">
+                <span class="accordion-icon px-4 shrink-0">
+                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg>
+                </span>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Expo della Creatività</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Pensiero Multidimensionale</p>
                 </div>
                 <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">21 MAGGIO</span>
             </div>
-        </div>
+            <div class="accordion-body" style="height:0;overflow:hidden;">
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Palco Centrale (Aula Magna)</h4>
+        <h4 id="expo-palco" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Palco Centrale (Aula Magna)</h4>
         <div class="mb-10 bg-white w-full min-w-0">
             <div class="flex border-b border-[#ccc] ">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
@@ -337,7 +365,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">PITTURA (Aula A39 / A59)</h4>
+        <h4 id="expo-pittura" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">PITTURA (Aula A39 / A59)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
@@ -371,7 +399,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DECORAZIONE (Aula A58)</h4>
+        <h4 id="expo-decorazione" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DECORAZIONE (Aula A58)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00&nbsp; 12:00</div>
@@ -398,7 +426,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">GRAPHIC DESIGN & MULTIMEDIA <br class="mobile-break"> (A46 / A47)</h4>
+        <h4 id="expo-graphic" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">GRAPHIC DESIGN & MULTIMEDIA <br class="mobile-break"> (A46 / A47)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
@@ -418,7 +446,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DESIGN (Aula A40 / A52)</h4>
+        <h4 id="expo-design" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">DESIGN (Aula A40 / A52)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:30</div>
@@ -450,7 +478,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FASHION DESIGN (Aula A53)</h4>
+        <h4 id="expo-fashion" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FASHION DESIGN (Aula A53)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
@@ -469,7 +497,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FOTOGRAFIA (Aula A62 / Mensa)</h4>
+        <h4 id="expo-fotografia" class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">FOTOGRAFIA (Aula A62 / Mensa)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">TUTTO IL GIORNO</div>
@@ -563,16 +591,25 @@
             <div class="hotspot-layer"></div>
         </div>
 
+            </div><!-- end accordion-body EXPO -->
+        </div><!-- end accordion-item EXPO -->
+
  <!-- ── Evento 03 — PRŌSOPON Fashion Show (23 GIUGNO) ──────────────────── -->
-        <div class="mb-2 mt-24" id="SFILATA">
-            <div class="flex justify-end" style="background:var(--cyan);">
+        <div class="accordion-item mb-2 mt-24" id="SFILATA">
+            <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--cyan);" role="button" aria-expanded="false">
+                <span class="accordion-icon px-4 shrink-0">
+                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg>
+                </span>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">PRŌSOPON</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Fashion Show</p>
                 </div>
                 <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
             </div>
-        </div>
+            <div class="accordion-body" style="height:0;overflow:hidden;">
 
         <div class="bg-white">
             <div class="flex border-b border-[#ccc]">
@@ -591,46 +628,48 @@
             </div>
         </div>
 
-        <!-- ═══ PRENOTAZIONE SFILATA ══════════════════════════════════════════ -->
+        <!-- ═══ PRENOTAZIONE — dentro l'accordion PRŌSOPON, full width ═══ -->
+         <section id="PRENOTAZIONE" class="w-full pt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1  gap-16 items-start">
+                <!-- Biglietto informativo -->
+                <div class="flex flex-col gap-8">
+                    <p class="font-black text-md uppercase tracking-widest">Prenotazione Posti</p>
+                    <div class="bg-[var(--cyan)] p-8">
+                        <h3 class="font-black text-2xl uppercase leading-none mb-6">
+                            PRŌSOPON<br>
+                            <span class="text-sm opacity-80">Fashion Show 2026</span>
+                        </h3>
+                        <div class="flex flex-col gap-4 text-xs font-bold uppercase tracking-widest">
+                            <div class="flex justify-between border-b border-black/20 pb-2">
+                                <span>Data</span><span>23 Giugno 2026</span>
+                            </div>
+                            <div class="flex justify-between border-b border-black/20 pb-2">
+                                <span>Location</span><span>Brixia Forum</span>
+                            </div>
+                            <div class="flex justify-between border-b border-black/20 pb-2">
+                                <span>Orario</span><span>19:30</span>
+                            </div>
+                            <p class="text-[9px] leading-relaxed opacity-80 pt-2">
+                                L'ingresso è garantito solo previa esibizione della conferma digitale ricevuta via email.
+                            </p>
 
-   
-     <section id="PRENOTAZIONE" class="w-full pt-16">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1  gap-16 items-start">
-            <!-- Biglietto informativo -->
-            <div class="flex flex-col gap-8">
-                <p class="font-black text-md uppercase tracking-widest">Prenotazione Posti</p>
-                <div class="bg-[var(--cyan)] p-8">
-                    <h3 class="font-black text-2xl uppercase leading-none mb-6">
-                        PRŌSOPON<br>
-                        <span class="text-sm opacity-80">Fashion Show 2026</span>
-                    </h3>
-                    <div class="flex flex-col gap-4 text-xs font-bold uppercase tracking-widest">
-                        <div class="flex justify-between border-b border-black/20 pb-2">
-                            <span>Data</span><span>23 Giugno 2026</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="bg-[var(--black)] text-white px-8 py-5 font-black uppercase text-xs tracking-[0.4em] hover:bg-[var(--blue)] hover:text-white transition-all text-center">
+                                Coming Soon
+                            </a>
+                            <!-- <p class="text-[9px] uppercase font-bold tracking-widest opacity-40 text-center">Verrai reindirizzato su Eventbrite</p> -->
+                        
                         </div>
-                        <div class="flex justify-between border-b border-black/20 pb-2">
-                            <span>Location</span><span>Brixia Forum</span>
-                        </div>
-                        <div class="flex justify-between border-b border-black/20 pb-2">
-                            <span>Orario</span><span>19:30</span>
-                        </div>
-                        <p class="text-[9px] leading-relaxed opacity-80 pt-2">
-                            L'ingresso è garantito solo previa esibizione della conferma digitale ricevuta via email.
-                        </p>
-
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="bg-[var(--black)] text-white px-8 py-5 font-black uppercase text-xs tracking-[0.4em] hover:bg-[var(--blue)] hover:text-white transition-all text-center">
-                            Coming Soon
-                        </a>
-                        <!-- <p class="text-[9px] uppercase font-bold tracking-widest opacity-40 text-center">Verrai reindirizzato su Eventbrite</p> -->
-                    
+                        
                     </div>
-                     
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+            </div><!-- end accordion-body SFILATA -->
+        </div><!-- end accordion-item SFILATA -->
+
 </main>
 
 <!-- Footer integrato -->
@@ -826,7 +865,7 @@
 
         pivot = new THREE.Group();
         pivot.position.y = 150;
-
+        pivot.rotation.y = 5.8;
         group = new THREE.Group();
         scene.add(pivot);
         pivot.add(group);
@@ -870,8 +909,16 @@
         if (!url) return;
 
         if (url.charAt(0) === '#') {
-            var target = document.getElementById(url.slice(1));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            var id = url.slice(1);
+            var target = document.getElementById(id);
+            if (target) {
+                if (target.classList && target.classList.contains('accordion-item')) {
+                    openAccordion(target);
+                }
+                setTimeout(function() {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }, 60);
+            }
             return;
         }
 
@@ -901,27 +948,27 @@
             img: 'PIANTINA1.png',
             accentColor: 'var(--purple)',
             locations: [
-                { top: '15%', left: '50%', w: '18%', h: '15%', name: 'Velvet Sky / Giardino',    desc: 'Food & Bar · 16:00–19:00', anchor: '#DISORGANICHE' },
-                { top: '30%', left: '45%', w: '6%',  h: '10%', name: 'Future Orange',             desc: 'Interviste agli ospiti · 15:00–19:00', anchor: '#DISORGANICHE' },
-                { top: '32%', left: '50%', w: '17%', h: '20%', name: 'Think Violet / Atrio',      desc: 'Talk, Masterchef Grafica · 15:00–18:00', anchor: '#DISORGANICHE' },
-                { top: '50%', left: '40%', w: '15%', h: '15%', name: 'Giardino',                  desc: 'Food & Bar 16:00–19:00 · Cocktail bar 19:00–20:00', anchor: '#DISORGANICHE' },
-                { top: '50%', left: '65%', w: '10%', h: '12%', name: 'Make Grey B03',             desc: 'Workshop & Masterclass · 15:00–17:00', anchor: '#DISORGANICHE' },
-                { top: '40%', left: '75%', w: '12%', h: '12%', name: 'Creative Space B04',        desc: 'Presentazione Tesi · 15:00–17:15', anchor: '#DISORGANICHE' },
-                { top: '30%', left: '85%', w: '15%', h: '15%', name: 'White Share B05',           desc: 'Collaborazioni con Aziende · 15:00–18:00', anchor: '#DISORGANICHE' },
-                { top: '60%', left: '2%',  w: '22%', h: '28%', name: 'MITA — Sala Concerti',     desc: 'TED · 17:00–18:30 · Andy dei Bluvertigo h.20:00', anchor: '#DISORGANICHE' }
+                { top: '10%', left: '50%', w: '18%', h: '15%', name: 'Velvet Sky / Giardino',    desc: 'Food & Bar · 16:00–19:00', anchor: '#dis-velvet' },
+                { top: '26%', left: '45%', w: '6%',  h: '10%', name: 'Future Orange',             desc: 'Interviste agli ospiti · 15:00–19:00', anchor: '#dis-axis01' },
+                { top: '32%', left: '50%', w: '17%', h: '20%', name: 'Think Violet / Atrio',      desc: 'Talk, Masterchef Grafica · 15:00–18:00', anchor: '#dis-think' },
+                { top: '50%', left: '40%', w: '15%', h: '15%', name: 'Giardino',                  desc: 'Food & Bar 16:00–19:00 · Cocktail bar 19:00–20:00', anchor: '#dis-velvet' },
+                { top: '50%', left: '65%', w: '10%', h: '12%', name: 'Make Grey B03',             desc: 'Workshop & Masterclass · 15:00–17:00', anchor: '#dis-workshop' },
+                { top: '40%', left: '75%', w: '12%', h: '12%', name: 'Creative Space B04',        desc: 'Presentazione Tesi · 15:00–17:15', anchor: '#dis-creative' },
+                { top: '25%', left: '85%', w: '15%', h: '15%', name: 'White Share B05',           desc: 'Collaborazioni con Aziende · 15:00–18:00', anchor: '#dis-creative' },
+                { top: '60%', left: '2%',  w: '22%', h: '28%', name: 'MITA — Sala Concerti',     desc: 'TED · 17:00–18:30 · Andy dei Bluvertigo h.20:00', anchor: '#dis-mita' }
             ]
         },
         {
             img: 'PIANTINA2.png',
             accentColor: 'var(--yellow)',
             locations: [
-                { top: '76%', left: '28%', w: '10%', h: '12%', name: 'Aula A39 — Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#EXPO' },
-                { top: '14%', left: '50%', w: '12%', h: '12%', name: 'Aula A58',                         desc: 'Workshop Serigrafia "Bestiari" + Urban Design', anchor: '#EXPO' },
-                { top: '22%', left: '76%', w: '20%', h: '20%', name: 'Aule A46 / A47 — Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#EXPO' },
-                { top: '40%', left: '20%', w: '20%', h: '20%', name: 'Aula Magna — Palco Centrale',      desc: 'Biennio Cinema, Awards & Contest · 10:00–14:00+', anchor: '#EXPO' },
-                { top: '40%', left: '57%', w: '10%', h: '10%', name: 'Aule A40 / A52 — Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#EXPO' },
-                { top: '2%', left: '78%', w: '12%', h: '12%', name: 'Aula A53 — Fashion Design',        desc: 'LABAtelier + Workshop "Made to Measure" · 14:00–17:00', anchor: '#EXPO' },
-                { top: '52%', left: '36%', w: '12%', h: '12%', name: 'Aula A62 / Mensa — Fotografia',    desc: 'Geografie Instabili + Workshop Antotipia', anchor: '#EXPO' }
+                { top: '76%', left: '28%', w: '10%', h: '12%', name: 'Aula A39 — Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#expo-pittura' },
+                { top: '14%', left: '50%', w: '12%', h: '12%', name: 'Aula A58',                         desc: 'Workshop Serigrafia "Bestiari" + Urban Design', anchor: '#expo-decorazione' },
+                { top: '22%', left: '76%', w: '20%', h: '20%', name: 'Aule A46 / A47 — Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#expo-graphic' },
+                { top: '40%', left: '20%', w: '20%', h: '20%', name: 'Aula Magna — Palco Centrale',      desc: 'Biennio Cinema, Awards & Contest · 10:00–14:00+', anchor: '#expo-palco' },
+                { top: '40%', left: '57%', w: '10%', h: '10%', name: 'Aule A40 / A52 — Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#expo-design' },
+                { top: '2%', left: '78%', w: '12%', h: '12%', name: 'Aula A53 — Fashion Design',        desc: 'LABAtelier + Workshop "Made to Measure" · 14:00–17:00', anchor: '#expo-fashion' },
+                { top: '52%', left: '36%', w: '12%', h: '12%', name: 'Aula A62 / Mensa — Fotografia',    desc: 'Geografie Instabili + Workshop Antotipia', anchor: '#expo-fotografia' }
             ]
         },
         {
@@ -957,7 +1004,7 @@
         var linkEl = document.createElement('a');
         linkEl.className = 'info-link';
         linkEl.textContent = '→ Vai al programma';
-        linkEl.style.cssText = 'display:none;margin-top:10px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:var(--black);text-decoration:none;border-bottom:1.5px solid var(--black);pointer-events:auto;cursor:pointer;';
+        linkEl.style.cssText = 'display:none;margin-top:10px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:var(--black);text-decoration:none;border-bottom:1.5px solid var(--black);pointer-events:auto;cursor:pointer;';
         infoBox.appendChild(linkEl);
 
         function showInfo(loc) {
@@ -1454,6 +1501,65 @@ window.closeWsModal = closeWsModal;
 </script>
 
 <script>
+/* ═══ FORM PRENOTAZIONE SFILATA ═══════════════════════════════════════ */
+function handleSfilataSubmit() {
+    var nome    = document.getElementById('sf-nome')    ? document.getElementById('sf-nome').value.trim()    : '';
+    var cognome = document.getElementById('sf-cognome') ? document.getElementById('sf-cognome').value.trim() : '';
+    var email   = document.getElementById('sf-email')   ? document.getElementById('sf-email').value.trim()   : '';
+    var posti   = document.getElementById('sf-posti')   ? document.getElementById('sf-posti').value          : '';
+
+    var fields = [
+        ['sf-nome', nome], ['sf-cognome', cognome], ['sf-email', email]
+    ];
+    var invalid = false;
+    fields.forEach(function(pair) {
+        if (!pair[1]) {
+            invalid = true;
+            var el = document.getElementById(pair[0]);
+            if (el) gsap.fromTo(el, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1,0.3)' });
+        }
+    });
+    if (!posti) {
+        invalid = true;
+        var sel = document.getElementById('sf-posti');
+        if (sel) gsap.fromTo(sel, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1,0.3)' });
+    }
+    if (invalid) return;
+
+    var btn = document.getElementById('sf-submit');
+    if (btn) { btn.disabled = true; btn.textContent = 'Invio in corso…'; }
+
+    var fd = new FormData();
+    fd.append('nome',    nome);
+    fd.append('cognome', cognome);
+    fd.append('email',   email);
+    fd.append('posti',   posti);
+    fd.append('evento',  'PRŌSOPON Fashion Show 2026');
+
+    fetch('send_sfilata.php', { method: 'POST', body: fd })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.ok) {
+                var wrap    = document.getElementById('sfilata-form-wrap');
+                var confirm = document.getElementById('sfilata-confirm');
+                var msg     = document.getElementById('sf-confirm-msg');
+                if (msg) msg.textContent = nome + ' ' + cognome + ', riceverai la conferma su ' + email + '.';
+                if (wrap)    { gsap.to(wrap,    { autoAlpha: 0, duration: 0.2, onComplete: function(){ wrap.style.display='none'; } }); }
+                if (confirm) { confirm.style.display='block'; gsap.fromTo(confirm, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.45, delay: 0.2 }); }
+            } else {
+                alert(data.msg || 'Errore. Riprova.');
+                if (btn) { btn.disabled = false; btn.textContent = 'Prenota Ora →'; }
+            }
+        })
+        .catch(function() {
+            alert('Errore di rete. Controlla la connessione e riprova.');
+            if (btn) { btn.disabled = false; btn.textContent = 'Prenota Ora →'; }
+        });
+}
+window.handleSfilataSubmit = handleSfilataSubmit;
+</script>
+
+<script>
     const backToTopButton = document.getElementById('backToTop');
 
     window.addEventListener('scroll', () => {
@@ -1474,6 +1580,105 @@ window.closeWsModal = closeWsModal;
             behavior: 'smooth' // Scroll fluido
         });
     });
+</script>
+
+<script>
+/* ═══ ACCORDION ════════════════════════════════════════════════════════ */
+var ACCORDION_IDS = ['DISORGANICHE', 'EXPO', 'SFILATA'];
+
+function openAccordion(item) {
+    if (!item) return;
+    var body = item.querySelector('.accordion-body');
+    var trigger = item.querySelector('.accordion-trigger');
+    var icon = trigger ? trigger.querySelector('.accordion-icon') : null;
+    if (!body) return;
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    /* Anima la barra verticale: sparisce → sembra un meno */
+    if (icon) {
+        var vBar = icon.querySelector('.acc-icon-v');
+        if (vBar) gsap.to(vBar, { scaleY: 0, duration: 0.28, ease: 'power2.inOut' });
+        gsap.to(icon, { rotation: 45, duration: 0.38, ease: 'back.out(1.4)' });
+    }
+    /* Misura l'altezza reale prima di animare */
+    body.style.height = 'auto';
+    var targetH = body.scrollHeight;
+    body.style.height = '0px';
+    gsap.fromTo(body,
+        { height: 0 },
+        { height: targetH, duration: 0.55, ease: 'power3.inOut',
+          onComplete: function() { body.style.height = 'auto'; } }
+    );
+}
+
+function closeAccordion(item) {
+    if (!item) return;
+    var body = item.querySelector('.accordion-body');
+    var trigger = item.querySelector('.accordion-trigger');
+    var icon = trigger ? trigger.querySelector('.accordion-icon') : null;
+    if (!body) return;
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    /* Ripristina icona + */
+    if (icon) {
+        var vBar = icon.querySelector('.acc-icon-v');
+        if (vBar) gsap.to(vBar, { scaleY: 1, duration: 0.28, ease: 'power2.inOut', delay: 0.05 });
+        gsap.to(icon, { rotation: 0, duration: 0.35, ease: 'power2.inOut' });
+    }
+    /* Fissa l'altezza corrente prima di chiudere */
+    body.style.height = body.scrollHeight + 'px';
+    gsap.to(body, { height: 0, duration: 0.42, ease: 'power3.inOut' });
+}
+
+function isAccordionOpen(item) {
+    var trigger = item.querySelector('.accordion-trigger');
+    return trigger && trigger.getAttribute('aria-expanded') === 'true';
+}
+
+document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+        var item = trigger.closest('.accordion-item');
+        if (!item) return;
+        if (isAccordionOpen(item)) {
+            closeAccordion(item);
+        } else {
+            openAccordion(item);
+        }
+    });
+});
+
+/* 21 Maggio e Prosopon aperto di default */
+openAccordion(document.getElementById('EXPO'));
+openAccordion(document.getElementById('SFILATA'));
+
+/* Intercetta link anchor verso sezioni accordion */
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        var hash = link.getAttribute('href');
+        var id = hash.slice(1);
+        if (ACCORDION_IDS.indexOf(id) === -1) return;
+        var item = document.getElementById(id);
+        if (!item) return;
+        e.preventDefault();
+        openAccordion(item);
+        setTimeout(function() {
+            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+    });
+});
+
+/* Hash all'apertura della pagina */
+(function() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var id = hash.slice(1);
+    if (ACCORDION_IDS.indexOf(id) === -1) return;
+    var item = document.getElementById(id);
+    if (item) {
+        openAccordion(item);
+        setTimeout(function() {
+            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 350);
+    }
+})();
 </script>
 </body>
 </html>

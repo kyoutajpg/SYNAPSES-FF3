@@ -16,6 +16,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .accordion-trigger { transition: filter 0.2s; }
+        .accordion-trigger:hover { filter: brightness(1.07); }
+        .accordion-body { will-change: height; }
+        .accordion-icon {
+            min-width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .acc-icon-svg { display: block; overflow: visible; }
+    </style>
 </head>
 <body>
 
@@ -142,17 +155,14 @@
         <!-- ── Evento 01 — Cronache Disorganiche (22 APRILE) ──────────────────── -->
         <div id="DISORGANICHE" class="accordion-item mb-2">
             <div class="accordion-trigger flex cursor-pointer select-none" style="background: var(--purple);" role="button" aria-expanded="false">
-                <span class="accordion-icon px-4 shrink-0">
-                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
-                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
-                    </svg>
-                </span>
                 <div class="flex-1 px-6 py-4">
-                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache Disorganiche</h3>
+                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache<br class="md:hidden"> Disorganiche</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-80">Incroci Creativi</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">22 APRILE</span>
+                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">22 APR</span><span class="hidden md:inline">22 APRILE</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg></span></span>
             </div>
             <div class="accordion-body" style="height:0;overflow:hidden;">
 
@@ -296,17 +306,14 @@
         <!-- ── Evento 02 — Expo della Creatività (21 MAGGIO) ──────────────────── -->
         <div class="accordion-item mb-2 mt-24" id="EXPO">
             <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--yellow);" role="button" aria-expanded="false">
-                <span class="accordion-icon px-4 shrink-0">
-                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
-                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
-                    </svg>
-                </span>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Expo della Creatività</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Pensiero Multidimensionale</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">21 MAGGIO</span>
+                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">21 MAG</span><span class="hidden md:inline">21 MAGGIO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg></span></span>
             </div>
             <div class="accordion-body" style="height:0;overflow:hidden;">
 
@@ -584,17 +591,14 @@
  <!-- ── Evento 03 — PRŌSOPON Fashion Show (23 GIUGNO) ──────────────────── -->
         <div class="accordion-item mb-2 mt-24" id="SFILATA">
             <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--cyan);" role="button" aria-expanded="false">
-                <span class="accordion-icon px-4 shrink-0">
-                    <svg class="acc-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
-                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
-                    </svg>
-                </span>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">PRŌSOPON</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Fashion Show</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-6 text-sm font-black bg-[var(--black)] text-[var(--white)]">23 GIUGNO</span>
+                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">23 GIU</span><span class="hidden md:inline">23 GIUGNO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
+                        <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
+                    </svg></span></span>
             </div>
             <div class="accordion-body" style="height:0;overflow:hidden;">
 
@@ -616,6 +620,7 @@
         </div>
 
         <!-- ═══ PRENOTAZIONE — dentro l'accordion PRŌSOPON, full width ═══ -->
+             <!-- ═══ PRENOTAZIONE — dentro l'accordion PRŌSOPON, full width ═══ -->
          <section id="PRENOTAZIONE" class="w-full pt-16">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1  gap-16 items-start">
@@ -653,6 +658,7 @@
             </div>
         </div>
     </section>
+
 
             </div><!-- end accordion-body SFILATA -->
         </div><!-- end accordion-item SFILATA -->
@@ -852,7 +858,7 @@
 
         pivot = new THREE.Group();
         pivot.position.y = 150;
-        pivot.rotation.y = 5.8;
+
         group = new THREE.Group();
         scene.add(pivot);
         pivot.add(group);
@@ -1632,7 +1638,7 @@ document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
     });
 });
 
-/* 21 Maggio e Prosopon aperto di default */
+/* 21 Maggio aperto di default */
 openAccordion(document.getElementById('EXPO'));
 openAccordion(document.getElementById('SFILATA'));
 

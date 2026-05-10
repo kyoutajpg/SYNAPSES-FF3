@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- user-scalable=no necessario per l'interazione 3D -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Synapses 2026 - Festival multidisciplinare di LABA Brescia: arte, design, moda e tecnologia.">
+    <meta name="description" content="Synapses 2026 — Festival multidisciplinare di LABA Brescia: arte, design, moda e tecnologia.">
     <meta name="theme-color" content="#A79ADB">
     <title>Synapses 2026 | LABA Brescia</title>
     <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
@@ -16,6 +16,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .accordion-trigger { transition: filter 0.2s; }
+        .accordion-trigger:hover { filter: brightness(1.07); }
+        .accordion-body { will-change: height; }
+        .accordion-icon {
+            min-width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .acc-icon-svg { display: block; overflow: visible; }
+    </style>
 </head>
 <body>
 
@@ -139,14 +152,15 @@
     <div class="max-w-6xl mx-auto px-8">
         <h2 class="font-black text-5xl uppercase mb-16 tracking-tighter">Il Programma</h2>
 
-        <!-- ── Evento 01 - Cronache Disorganiche (22 APRILE) ──────────────────── -->
+        <!-- ── Evento 01 — Cronache Disorganiche (22 APRILE) ──────────────────── -->
         <div id="DISORGANICHE" class="accordion-item mb-2">
-            <div class="accordion-trigger flex cursor-pointer select-none" style="background: var(--purple);" role="button" aria-expanded="false">
+            <div class="accordion-trigger flex flex-col md:flex-row cursor-pointer select-none" style="background:  var(--purple);" role="button" aria-expanded="false">
+                <div class="md:hidden w-full px-6 py-2 bg-[var(--black)] text-white flex items-center justify-between text-xs font-black uppercase tracking-widest">22 APRILE <span class="accordion-icon flex items-center"><svg class="acc-icon-svg" width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/><rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/></svg></span></div>
                 <div class="flex-1 px-6 py-4">
-                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache<br class="md:hidden"> Disorganiche</h3>
+                    <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Cronache Disorganiche</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-80">Incroci Creativi</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">22 APR</span><span class="hidden md:inline">22 APRILE</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="hidden md:flex self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] items-center gap-2 whitespace-nowrap"><span class="md:hidden">22 APR</span><span class="hidden md:inline">22 APRILE</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
                         <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
                     </svg></span></span>
@@ -234,7 +248,7 @@
                         <li>Sviluppo 3D Meshy e Stampa (Mai e Colangelo)</li>
                         <li>Pack Design (Conzatti)</li>
                     </ul>
-                    <!-- riga 292 - Laboratori Pratici 22 Aprile 
+                    <!-- riga 292 — Laboratori Pratici 22 Aprile 
                 <button class="ws-book-btn" onclick="openWsModal('Fanzine AI')">+ Prenota posto</button>-->
                 </div>
             </div>
@@ -277,7 +291,7 @@
         </div>
 
         <!-- Mappa 01 -->
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 text-[var(--purple)]">Dove si svolge - Passa sugli spazi per i dettagli</h4>
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 text-[var(--purple)]">Dove si svolge — Passa sugli spazi per i dettagli</h4>
         <div class="map-container" data-map-index="0">
             <div class="info-box-inner">
                 <h4 class="text-sm md:text-xl font-black uppercase info-name"></h4>
@@ -290,14 +304,15 @@
             </div><!-- end accordion-body DISORGANICHE -->
         </div><!-- end accordion-item DISORGANICHE -->
 
-        <!-- ── Evento 02 - Expo della Creatività (21 MAGGIO) ──────────────────── -->
+        <!-- ── Evento 02 — Expo della Creatività (21 MAGGIO) ──────────────────── -->
         <div class="accordion-item mb-2 mt-24" id="EXPO">
-            <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--yellow);" role="button" aria-expanded="false">
+            <div class="accordion-trigger flex flex-col md:flex-row cursor-pointer select-none" style="background:var(--yellow);" role="button" aria-expanded="false">
+                <div class="md:hidden w-full px-6 py-2 bg-[var(--black)] text-white flex items-center justify-between text-xs font-black uppercase tracking-widest">21 MAGGIO <span class="accordion-icon flex items-center"><svg class="acc-icon-svg" width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/><rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/></svg></span></div>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">Expo della Creatività</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Pensiero Multidimensionale</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">21 MAG</span><span class="hidden md:inline">21 MAGGIO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="hidden md:flex self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] items-center gap-2 whitespace-nowrap"><span class="md:hidden">21 MAG</span><span class="hidden md:inline">21 MAGGIO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
                         <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
                     </svg></span></span>
@@ -310,7 +325,7 @@
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:00</div>
                     <div class="px-5 py-4 min-w-0 flex-1 overflow-hidden">
                         <p class="font-black text-xs uppercase tracking-wide break-words">
-                            Biennio Cinema - Presentazione Cortometraggi
+                            Biennio Cinema — Presentazione Cortometraggi
                         </p>
                         <p class="text-xs mt-1 opacity-80 break-words">
                             "Goodbye Baghdad" (finzione, A.A. 2022/23, regia Simone Manetti) 
@@ -319,7 +334,7 @@
                             <br class="mobile-break"><br class="mobile-break"> 
                             "Marble Man" (finzione, A.A. 2024/25) 
                             <br class="mobile-break"><br class="mobile-break"> 
-                            "Mix AI" - raccolta video realizzati in AI (10 min).
+                            "Mix AI" — raccolta video realizzati in AI (10 min).
                         </p>
                     </div>
                 </div>
@@ -333,7 +348,7 @@
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:00</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Progetto Elettron - Borse di Studio</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Progetto Elettron — Borse di Studio</p>
                     <p class="text-xs mt-1 opacity-80">Contest decorazioni murali per Elettron. Triennio Decorazione.</p>
                 </div>
             </div>
@@ -374,7 +389,7 @@
             <div class="flex">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
                 <div class="px-5 py-4">
-                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Vedo Blu - Cianotipia (A59)</p>
+                    <p class="font-black text-xs uppercase tracking-wide">Workshop: Vedo Blu — Cianotipia (A59)</p>
                     <p class="text-xs mt-1 opacity-80">Sperimentare diversi punti di vista attraverso la cianotipia. (Silvia Trappa)</p>
                 </div>
             </div>
@@ -387,7 +402,7 @@
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Workshop: Serigrafia</p>
                     <p class="text-xs mt-1 opacity-80">Bestiari (Rossi/Cervi). Stampa su diverse superfici da repertori medievali e moderni.</p>
-                   <!-- <button class="ws-book-btn" onclick="openWsModal('Serigrafia - Bestiari')">+ Prenota posto</button> -->
+                   <!-- <button class="ws-book-btn" onclick="openWsModal('Serigrafia — Bestiari')">+ Prenota posto</button> -->
                 </div>
             </div>
             <!-- FIX: rimosso il div.flex annidato inutilmente dentro un altro div.flex -->
@@ -433,28 +448,28 @@
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">10:30</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
-                    <p class="text-xs mt-1 opacity-80">Eyewear Design - Vincitori Sergio Cereda Award 2026 (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
+                    <p class="text-xs mt-1 opacity-80">Eyewear Design — Vincitori Sergio Cereda Award 2026 (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
                 </div>
             </div>
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">11:30</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Ospite: Maurizio Scutellà (A40)</p>
-                    <p class="text-xs mt-1 opacity-80">Diario di viaggio di un designer - Conversazione sul design (30/45 min).</p>
+                    <p class="text-xs mt-1 opacity-80">Diario di viaggio di un designer — Conversazione sul design (30/45 min).</p>
                 </div>
             </div>
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">14:30</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
-                    <p class="text-xs mt-1 opacity-80">Workshop Site Dound: B&B Cà Nostra, Cimbergo BS - Prof. Paolo Mestriner (15 min). Yacht Design - Lavori finali Biennio Industrial & Research Design, Arch. Filippo Rossi (15 min).</p>
+                    <p class="text-xs mt-1 opacity-80">Workshop Site Dound: B&B Cà Nostra, Cimbergo BS — Prof. Paolo Mestriner (15 min). Yacht Design — Lavori finali Biennio Industrial & Research Design, Arch. Filippo Rossi (15 min).</p>
                 </div>
             </div>
             <div class="flex">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">15:30</div>
                 <div class="px-5 py-4">
                     <p class="font-black text-xs uppercase tracking-wide">Presentazione Progetti (A40)</p>
-                    <p class="text-xs mt-1 opacity-80">Veicoli Elettrici a guida autonoma - IOT Design (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
+                    <p class="text-xs mt-1 opacity-80">Veicoli Elettrici a guida autonoma — IOT Design (15 min). Lavori finali Biennio Interior & Green Design (15 min).</p>
                 </div>
             </div>
         </div>
@@ -497,7 +512,7 @@
             </div>
         </div>
 
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]" id="expo-scenografia">SCENOGRAFIA & PERFORMANCE <br class="mobile-break"> (Spazi Vari)</h4>
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">SCENOGRAFIA & PERFORMANCE <br class="mobile-break"> (Spazi Vari)</h4>
         <div class="mb-10 bg-white">
             <div class="flex border-b border-[#ccc]">
                 <div class="w-32 shrink-0 px-5 py-4 font-black text-xs uppercase tracking-widest border-r border-[#ccc]">ENTRO 13:30</div>
@@ -562,7 +577,7 @@
         </div>
 
          <!-- Mappa 02 -->
-        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Dove si svolge - Passa sugli spazi per i dettagli</h4>
+        <h4 class="font-black text-sm uppercase tracking-widest mb-4 mt-10 text-[var(--yellow)]">Dove si svolge — Passa sugli spazi per i dettagli</h4>
         <div class="map-container" data-map-index="1">
             <div class="info-box-inner">
                 <h4 class="text-sm md:text-xl font-black uppercase info-name"></h4>
@@ -575,14 +590,15 @@
             </div><!-- end accordion-body EXPO -->
         </div><!-- end accordion-item EXPO -->
 
- <!-- ── Evento 03 - PRŌSOPON Fashion Show (23 GIUGNO) ──────────────────── -->
+ <!-- ── Evento 03 — PRŌSOPON Fashion Show (23 GIUGNO) ──────────────────── -->
         <div class="accordion-item mb-2 mt-24" id="SFILATA">
-            <div class="accordion-trigger flex cursor-pointer select-none" style="background:var(--cyan);" role="button" aria-expanded="false">
+            <div class="accordion-trigger flex flex-col md:flex-row cursor-pointer select-none" style="background:var(--cyan);" role="button" aria-expanded="false">
+                <div class="md:hidden w-full px-6 py-2 bg-[var(--black)] text-white flex items-center justify-between text-xs font-black uppercase tracking-widest">23 GIUGNO <span class="accordion-icon flex items-center"><svg class="acc-icon-svg" width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/><rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/></svg></span></div>
                 <div class="px-6 py-4 flex flex-col justify-center flex-1">
                     <h3 class="font-black text-2xl md:text-3xl uppercase tracking-tight leading-none">PRŌSOPON</h3>
                     <p class="font-bold text-xs uppercase tracking-widest mt-1 opacity-70">Fashion Show</p>
                 </div>
-                <span class="self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] flex items-center gap-2 whitespace-nowrap"><span class="md:hidden">23 GIU</span><span class="hidden md:inline">23 GIUGNO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="hidden md:flex self-start -mr-3 mt-3 py-2 px-4 text-sm font-black bg-[var(--black)] text-[var(--white)] items-center gap-2 whitespace-nowrap"><span class="md:hidden">23 GIU</span><span class="hidden md:inline">23 GIUGNO</span><span class="accordion-icon flex items-center"><svg class="acc-icon-svg " width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect class="acc-icon-h" x="0" y="9" width="20" height="2" fill="currentColor"/>
                         <rect class="acc-icon-v" x="9" y="0" width="2" height="20" fill="currentColor"/>
                     </svg></span></span>
@@ -606,8 +622,8 @@
             </div>
         </div>
 
-        <!-- ═══ PRENOTAZIONE - dentro l'accordion PRŌSOPON, full width ═══ -->
-             <!-- ═══ PRENOTAZIONE - dentro l'accordion PRŌSOPON, full width ═══ -->
+        <!-- ═══ PRENOTAZIONE — dentro l'accordion PRŌSOPON, full width ═══ -->
+             <!-- ═══ PRENOTAZIONE — dentro l'accordion PRŌSOPON, full width ═══ -->
          <section id="PRENOTAZIONE" class="w-full pt-16">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1  gap-16 items-start">
@@ -654,7 +670,7 @@
 
 <!-- Footer integrato -->
     <div style="background:var(--black);color:var(--white);" class="w-full py-8 px-8">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div class="flex items-center gap-6">
                 <img src="Assets/LABA_orange.svg" alt="LABA" class="h-8 w-auto object-contain opacity-90">
                 <span class="font-black text-[9px] uppercase tracking-[0.3em] opacity-40">Accademia LABA Brescia &copy; 2026</span>
@@ -693,7 +709,7 @@
                 <label for="ws-orario" style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:0.2em;">Orario</label>
                 <select id="ws-orario" required
                     style="border:none;border-bottom:2px solid #111;padding:8px 4px;font-weight:700;font-size:14px;background:transparent;outline:none;width:100%;cursor:pointer;">
-                    <option value="">Scegli orario -</option>
+                    <option value="">Scegli orario —</option>
                 </select>
             </div>
             <button id="ws-modal-submit" type="button"
@@ -935,34 +951,28 @@
                 { top: '50%', left: '65%', w: '10%', h: '12%', name: 'Make Grey B03',             desc: 'Workshop & Masterclass · 15:00–17:00', anchor: '#dis-workshop' },
                 { top: '40%', left: '75%', w: '12%', h: '12%', name: 'Creative Space B04',        desc: 'Presentazione Tesi · 15:00–17:15', anchor: '#dis-creative' },
                 { top: '25%', left: '85%', w: '15%', h: '15%', name: 'White Share B05',           desc: 'Collaborazioni con Aziende · 15:00–18:00', anchor: '#dis-creative' },
-                { top: '60%', left: '2%',  w: '22%', h: '28%', name: 'MITA - Sala Concerti',     desc: 'TED · 17:00–18:30 · Andy dei Bluvertigo h.20:00', anchor: '#dis-mita' }
+                { top: '60%', left: '2%',  w: '22%', h: '28%', name: 'MITA — Sala Concerti',     desc: 'TED · 17:00–18:30 · Andy dei Bluvertigo h.20:00', anchor: '#dis-mita' }
             ]
         },
         {
             img: 'PIANTINA2.png',
             accentColor: 'var(--yellow)',
             locations: [
-                { top: '76%', left: '28%', w: '10%', h: '12%', name: 'Aula A39 - Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#expo-pittura' },
-                { top: '3%', left: '63%', w: '12%', h: '12%', name: 'Aula A58 - Decorazione',           desc: 'Workshop Serigrafia "Bestiari" + Urban Design', anchor: '#expo-decorazione' },
-                { top: '15%', left: '50%', w: '12%', h: '12%', name: 'Aula A59 - Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#expo-pittura' },
-                { top: '22%', left: '76%', w: '20%', h: '20%', name: 'Aule A46 / A47 - Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#expo-graphic' },
-                { top: '32%', left: '65%', w: '20%', h: '20%', name: 'Aule A46 / A47 - Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#expo-graphic' },
-                { top: '40%', left: '20%', w: '20%', h: '20%', name: 'Aula Magna - Palco Centrale',      desc: 'Biennio Cinema, Awards & Contest · 10:00–14:00+', anchor: '#expo-palco' },
-                { top: '40%', left: '57%', w: '10%', h: '10%', name: 'Aule A40 / A52 - Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#expo-design' },
-                { top: '10%', left: '87%', w: '10%', h: '10%', name: 'Aule A40 / A52 - Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#expo-design' },
-                { top: '2%', left: '78%', w: '12%', h: '12%', name: 'Aula A53 - Fashion Design',        desc: 'LABAtelier + Workshop "Made to Measure" · 14:00–17:00', anchor: '#expo-fashion' },
-                { top: '52%', left: '36%', w: '12%', h: '12%', name: 'Aula A62 / Mensa - Fotografia',    desc: 'Geografie Instabili + Workshop Antotipia', anchor: '#expo-fotografia' },
-                { top: '62%', left: '42%', w: '12%', h: '12%', name: 'Aula A29 / A31 - Scenografia',    desc: 'Workshop pratico, Performance Art, Cortometraggi', anchor: '#expo-scenografia' },
-                { top: '45%', left: '48%', w: '12%', h: '12%', name: 'Aula A29 / A31 - Scenografia',    desc: 'Workshop pratico, Performance Art, Cortometraggi', anchor: '#expo-scenografia' },
-                
+                { top: '76%', left: '28%', w: '10%', h: '12%', name: 'Aula A39 — Pittura',              desc: 'Workshop AI, Incisione, Cianotipia · tutto il giorno', anchor: '#expo-pittura' },
+                { top: '14%', left: '50%', w: '12%', h: '12%', name: 'Aula A58',                         desc: 'Workshop Serigrafia "Bestiari" + Urban Design', anchor: '#expo-decorazione' },
+                { top: '22%', left: '76%', w: '20%', h: '20%', name: 'Aule A46 / A47 — Graphic',        desc: 'Incroci Creativi, Digital Design, Workshop Cinema', anchor: '#expo-graphic' },
+                { top: '40%', left: '20%', w: '20%', h: '20%', name: 'Aula Magna — Palco Centrale',      desc: 'Biennio Cinema, Awards & Contest · 10:00–14:00+', anchor: '#expo-palco' },
+                { top: '40%', left: '57%', w: '10%', h: '10%', name: 'Aule A40 / A52 — Design',         desc: 'Interior & Industrial Exhibition, Sergi Cereda Award', anchor: '#expo-design' },
+                { top: '2%', left: '78%', w: '12%', h: '12%', name: 'Aula A53 — Fashion Design',        desc: 'LABAtelier + Workshop "Made to Measure" · 14:00–17:00', anchor: '#expo-fashion' },
+                { top: '52%', left: '36%', w: '12%', h: '12%', name: 'Aula A62 / Mensa — Fotografia',    desc: 'Geografie Instabili + Workshop Antotipia', anchor: '#expo-fotografia' }
             ]
         },
         {
             img: 'PIANTINA3.png',
             accentColor: 'var(--cyan)',
             locations: [
-                { top: '34%', left: '18%', w: '12%', h: '18%', name: 'Ingresso - Red Carpet',   desc: 'Accoglienza e Red Carpet · 19:30', anchor: '#SFILATA' },
-                { top: '30%', left: '30%', w: '30%', h: '30%', name: 'Brixia Forum - Main Hall', desc: 'PRŌSOPON Fashion Show · Triennio & Biennio Fashion · 20:30', anchor: '#SFILATA' }
+                { top: '34%', left: '18%', w: '12%', h: '18%', name: 'Ingresso — Red Carpet',   desc: 'Accoglienza e Red Carpet · 19:30', anchor: '#SFILATA' },
+                { top: '30%', left: '30%', w: '30%', h: '30%', name: 'Brixia Forum — Main Hall', desc: 'PRŌSOPON Fashion Show · Triennio & Biennio Fashion · 20:30', anchor: '#SFILATA' }
             ]
         }
     ];
@@ -1204,56 +1214,56 @@ initFestivalTimers();
 </script>
 <script>
 /* =================================================================
-   forms.js - Synapses 2026 - INLINED
+   forms.js — Synapses 2026 — INLINED
    ================================================================= */
 
 var WS_CONFIG = {
     'Masterchef della Grafica': {
-        evento: '22 Aprile - Cronache Disorganiche',
+        evento: '22 Aprile — Cronache Disorganiche',
         orari: ['15:00', '16:00']
     },
     'Fanzine AI': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:00', '15:30', '16:00']
     },
     'Generazione Immagini Comfy': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:00', '15:30', '16:00']
     },
     'Sviluppo 3D Meshy e Stampa 3D': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:00', '16:00']
     },
     'Pack Design': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:00', '16:00']
     },
     'Creare con le AI': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['14:00', '15:00']
     },
     'Incisione e Stampa': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:30', '16:30']
     },
-    'Cianotipia - Vedo Blu': {
-        evento: '21 Maggio - Expo della Creatività',
+    'Cianotipia — Vedo Blu': {
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['15:30', '16:30']
     },
-    'Serigrafia - Bestiari': {
-        evento: '21 Maggio - Expo della Creatività',
+    'Serigrafia — Bestiari': {
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['10:00', '11:00']
     },
     'Graphic Design nel Cinema': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['14:00', '15:30']
     },
     'Made to Measure LABA!': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['14:00', '15:00', '16:00']
     },
     'Antotipia': {
-        evento: '21 Maggio - Expo della Creatività',
+        evento: '21 Maggio — Expo della Creatività',
         orari: ['14:00', '15:30']
     }
 };
@@ -1368,7 +1378,7 @@ function openWsModal(workshopName, orari, eventoLabel) {
     wsTitle.textContent = workshopName;
     document.getElementById('ws-modal-evento').textContent = resolvedEvento;
 
-    wsOrariSel.innerHTML = '<option value="">Scegli orario -</option>';
+    wsOrariSel.innerHTML = '<option value="">Scegli orario —</option>';
     resolvedOrari.forEach(function (h) {
         var opt = document.createElement('option');
         opt.value = h;

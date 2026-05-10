@@ -16,6 +16,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .accordion-trigger { transition: filter 0.2s; }
+        html, body { overflow-x: hidden; }
+        .accordion-trigger:hover { filter: brightness(1.07); }
+        .accordion-body { will-change: height; }
+        .accordion-icon {
+            min-width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .acc-icon-svg { display: block; overflow: visible; }
+    </style>
 </head>
 <body>
 

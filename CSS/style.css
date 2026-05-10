@@ -473,7 +473,8 @@ body {
         min-height: 350px;
     }
 }
- .accordion-trigger { transition: filter 0.2s; }
+  .accordion-trigger { transition: filter 0.2s; }
+        html, body { overflow-x: hidden; }
         .accordion-trigger:hover { filter: brightness(1.07); }
         .accordion-body { will-change: height; }
         .accordion-icon {

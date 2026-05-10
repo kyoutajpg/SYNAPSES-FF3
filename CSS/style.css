@@ -257,37 +257,63 @@ body {
 /* ─── MAP PING ─── */
 .hotspot-ping {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;  /* Dimensione base leggermente più grande per mobile */
+    height: 20px;
     pointer-events: none;
+    z-index: 10;  /* Forza l'elemento sopra gli altri layer */
 }
-.hotspot-ping::before,
+
+.hotspot-ping::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    
+    /* Animazione e Performance */
+    animation: ping-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 .hotspot-ping::after {
     content: '';
     position: absolute;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.35);
-    width: 14px;
-    height: 14px;
-}
-.hotspot-ping::before {
-    animation: ping-pulse 2s ease-out infinite;
-    animation-delay: var(--ping-delay, 0s);
-}
-.hotspot-ping {
-    --ping-delay: 0s;
-}
-.hotspot-ping::after {
+    top: 50%;
+    left: 50%;
     width: 8px;
     height: 8px;
-    background: rgba(0,0,0,0.75);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
+
 @keyframes ping-pulse {
-    0%   { transform: scale(1);   opacity: 0.7; }
-    70%  { transform: scale(2.8); opacity: 0; }
-    100% { transform: scale(2.8); opacity: 0; }
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ─── MEDIA QUERY PER DIMENSIONE MOBILE ─── */
+@media (max-width: 600px) {
+    .hotspot-ping {
+        width: 15px;  /* Rimpicciolisci qui per mobile */
+        height: 15px;
+    }
+    .hotspot-ping::after {
+        width: 6px;   /* Rimpicciolisci il centro */
+        height: 6px;
+    }
 }
 
 /* ─── WORKSHOP MODAL ─── */
@@ -443,15 +469,15 @@ body {
         min-height: 350px;
     }
 }
-  .accordion-trigger { transition: filter 0.2s; }
-        html, body { overflow-x: hidden; }
-        .accordion-trigger:hover { filter: brightness(1.07); }
-        .accordion-body { will-change: height; }
-        .accordion-icon {
-            min-width: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            will-change: transform;
-        }
-        .acc-icon-svg { display: block; overflow: visible; }
+    .accordion-trigger { transition: filter 0.2s; }
+    html, body { overflow-x: hidden; }
+    .accordion-trigger:hover { filter: brightness(1.07); }
+    .accordion-body { will-change: height; }
+    .accordion-icon {
+        min-width: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        will-change: transform;
+    }
+    .acc-icon-svg { display: block; overflow: visible; }
